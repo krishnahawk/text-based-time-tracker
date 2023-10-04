@@ -1,5 +1,5 @@
 
-const now = new Date("Wed Oct 04 2023 20:20:00 GMT-1000");
+// const now = new Date("Wed Oct 04 2023 20:20:00 GMT-1000");
 const filePath = 'timeblock.txt'; // Replace with your local file path
 function fetchFile() {
     fetch(filePath)
@@ -10,14 +10,28 @@ function fetchFile() {
 }
 
 function parseAndDisplay(data) {
-
     const lines = data.split('\n');
+    // If line is empty, remove it
+    for (let i = 0; i < lines.length; i++) {
+        if (lines[i].trim() === '') {
+            lines.splice(i, 1);
+        }
+    }
+
     const startTime = new Date();
-    const [hour, ampm] = lines[0].match(/(\d+)(am|pm)/i);
-    startTime.setHours(ampm.toLowerCase() === 'am' ? parseInt(hour) : parseInt(hour) + 12);
-    startTime.setMinutes(0);
+    startTime.setHours(0, 0, 0, 0); // Set to start of the day (midnight)
+
+    const [_, hour, minutesRaw, ampm] = lines[0].match(/(\d+)(?::(\d+))?(am|pm)/i);
+const minutes = minutesRaw || "0";
+;
+    if (ampm.toLowerCase() === 'pm' && hour !== "12") {
+        startTime.setHours(parseInt(hour) + 12);
+    } else {
+        startTime.setHours(parseInt(hour));
+    }
+    startTime.setMinutes(parseInt(minutes));
     startTime.setSeconds(0); // Reset seconds
-    startTime.setMilliseconds(0); // Reset milliseconds
+    startTime.setMilliseconds(0); // Reset millisecondss
 
     const timelineDiv = document.getElementById('timeline');
     timelineDiv.innerHTML = ''; // Clear previous entries
@@ -44,16 +58,32 @@ function parseAndDisplay(data) {
 
         const timeblockDiv = document.createElement('div');
         timeblockDiv.className = 'timeblock';
-        timeblockDiv.innerHTML = `${formatTime(baseTime)} - ${formatTime(updatedTime)}: ${description}`;
-
+        // timeblockDiv.innerHTML = `${formatTime(baseTime)} - ${formatTime(updatedTime)}: ${description}`;
+        timeblockDiv.innerHTML = `<div class="start_time">${formatTime(baseTime)}</div><div class="description">${description}</div>`;
         const now = new Date();
         now.setSeconds(0);
         now.setMilliseconds(0);
 
-        if (now.getTime() >= baseTime.getTime() && now.getTime() <= updatedTime.getTime()) {
+        const isAfterStartTime = now.getTime() >= baseTime.getTime();
+        const isBeforeEndTime = now.getTime() <= updatedTime.getTime();
+
+        console.log("Is after start time:", isAfterStartTime);
+        console.log("Is before end time:", isBeforeEndTime);
+
+        if (isAfterStartTime && isBeforeEndTime) {
             timeblockDiv.classList.add('current');
-            console.log("Current class added:", timeblockDiv.classList);
         }
+
+        // Calculate total duration of the block in milliseconds
+const totalDurationMillis = updatedTimeMillis - baseTime.getTime();
+
+// Calculate 15% of that duration
+const last15PercentMillis = totalDurationMillis * 0.15;
+
+// Check if the current time is within the last 15% of the block
+if (now.getTime() >= (updatedTimeMillis - last15PercentMillis) && now.getTime() <= updatedTimeMillis) {
+    timeblockDiv.classList.add('ending');
+}
 
         timelineDiv.appendChild(timeblockDiv);
 
@@ -63,6 +93,8 @@ function parseAndDisplay(data) {
         console.log('Parsed Duration:', value);
 
         baseTime = updatedTime; // Update the base time for the next iteration
+        baseTime.setMinutes(baseTime.getMinutes() + 1); // Add 1 minute to the base time
+
     }
 }
 
@@ -80,5 +112,5 @@ function formatTime(date) {
 // Initial load
 fetchFile();
 
-// Update every minute
-setInterval(fetchFile, 60000);
+// Update every 2 seconds
+setInterval(fetchFile, 2000);
