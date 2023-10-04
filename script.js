@@ -1,3 +1,5 @@
+
+const now = new Date("Wed Oct 04 2023 20:20:00 GMT-1000");
 const filePath = 'timeblock.txt'; // Replace with your local file path
 function fetchFile() {
     fetch(filePath)
@@ -8,6 +10,7 @@ function fetchFile() {
 }
 
 function parseAndDisplay(data) {
+
     const lines = data.split('\n');
     const startTime = new Date();
     const [hour, ampm] = lines[0].match(/(\d+)(am|pm)/i);
@@ -25,17 +28,19 @@ function parseAndDisplay(data) {
 
         const value = parseInt(duration);
 
-        let updatedTime = new Date(baseTime.getTime());
+        let updatedTimeMillis = baseTime.getTime();
+        console.log('Initial millis:', updatedTimeMillis);
 
         if (duration.includes('h')) {
             console.log('Adding hours to endTime');
-            console.log('Expected updated time (hours):', new Date(updatedTime.getTime() + value * 60 * 60 * 1000));
-            updatedTime.setHours(updatedTime.getHours() + value);
+            updatedTimeMillis += value * 60 * 60 * 1000; // Add hours in milliseconds
         } else if (duration.includes('m')) {
             console.log('Adding minutes to endTime');
-            console.log('Expected updated time (minutes):', new Date(updatedTime.getTime() + value * 60 * 1000));
-            updatedTime.setMinutes(updatedTime.getMinutes() + value);
+            updatedTimeMillis += value * 60 * 1000; // Add minutes in milliseconds
         }
+
+        let updatedTime = new Date(updatedTimeMillis);
+        console.log('Updated millis:', updatedTimeMillis);
 
         const timeblockDiv = document.createElement('div');
         timeblockDiv.className = 'timeblock';
@@ -44,21 +49,23 @@ function parseAndDisplay(data) {
         const now = new Date();
         now.setSeconds(0);
         now.setMilliseconds(0);
+
         if (now.getTime() >= baseTime.getTime() && now.getTime() <= updatedTime.getTime()) {
             timeblockDiv.classList.add('current');
+            console.log("Current class added:", timeblockDiv.classList);
         }
 
         timelineDiv.appendChild(timeblockDiv);
 
-        baseTime = updatedTime; // Update the base time for the next iteration
-
-        console.log('Start Time:', baseTime);
-        console.log('End Time:', updatedTime);
-        console.log('Current Time:', now);
+        console.log('Start Time:', formatTime(baseTime));
+        console.log('End Time:', formatTime(updatedTime)); // Log the End Time before updating baseTime
+        console.log('Current Time:', formatTime(now));
         console.log('Parsed Duration:', value);
-    }
 
+        baseTime = updatedTime; // Update the base time for the next iteration
+    }
 }
+
 
 function formatTime(date) {
     let hours = date.getHours();
