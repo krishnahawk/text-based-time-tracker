@@ -1,3 +1,7 @@
+// Set time to 12:00am
+const now = new Date();
+now.setHours(0, 0, 0, 0);
+
 
 // const now = new Date("Wed Oct 04 2023 20:20:00 GMT-1000");
 const filePath = 'timeblock.txt'; // Replace with your local file path
@@ -27,6 +31,10 @@ const minutes = minutesRaw || "0";
 ;
     if (ampm.toLowerCase() === 'pm' && hour !== "12") {
         startTime.setHours(parseInt(hour) + 12);
+
+    } else if (ampm.toLowerCase() === 'am' && hour === "12") {
+        startTime.setHours(0);
+
     } else {
         startTime.setHours(parseInt(hour));
     }
@@ -76,8 +84,13 @@ const percentagePassed = (now.getTime() - baseTime.getTime()) / totalDurationMil
 
 // Update the width of the #progress_bar div
 const progressBarDiv = document.getElementById('progress_bar');
-progressBarDiv.style.width = `${percentagePassed * 100}%`;
 
+progressBarDiv.style.width = `${percentagePassed * 100}%`;
+if (percentagePassed < 0.15) {
+    progressBarDiv.classList.add('progress_bar_inactive');
+} else {
+    progressBarDiv.classList.remove('progress_bar_inactive');
+}
 
 // Calculate 15% of that duration
 const last15PercentMillis = totalDurationMillis * 0.15;
@@ -97,9 +110,16 @@ if (description.includes('[') && description.includes(']')) {
         timelineDiv.appendChild(timeblockDiv);
 
         baseTime = updatedTime; // Update the base time for the next iteration
-        baseTime.setMinutes(baseTime.getMinutes() + 1); // Add 1 minute to the base time
+        baseTime.setMinutes(baseTime.getMinutes() - 1); // Add 1 minute to the base time
 
     }
+
+    // Get the height of the timeline div
+    const timelineHeight = timelineDiv.offsetHeight;
+    // scale font sizee based on height of timeline
+    const fontSize = 19;
+    timelineDiv.style.fontSize = `${fontSize}px`;
+
 }
 
 
