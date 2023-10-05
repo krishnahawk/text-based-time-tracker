@@ -51,6 +51,9 @@
             padding: 0.5rem;
             font-weight: 200;
         }
+        .timeblock.offline .description {
+            color: #A4BEA5;
+        }
         .current .description {
             background-color: #244174;
             font-weight: 600;
@@ -59,10 +62,20 @@
         .ending .description {
             background-color: #D03451;
         }
+        #progress_bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 5px;
+            background-color: #D13452;
+            width: 0%;
+            transition: width 1s ease-in-out;
+        }
     </style>
 </head>
 <body>
     <div id="timeline"></div>
+    <div id="progress_bar"></div>
     <script src="script.js"></script>
 </body>
 </html>

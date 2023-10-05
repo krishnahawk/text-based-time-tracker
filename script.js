@@ -2,7 +2,8 @@
 // const now = new Date("Wed Oct 04 2023 20:20:00 GMT-1000");
 const filePath = 'timeblock.txt'; // Replace with your local file path
 function fetchFile() {
-    fetch(filePath)
+    const filePathWithCacheBuster = `timeblock.txt?cacheBuster=${new Date().getTime()}`;
+    fetch(filePathWithCacheBuster)
         .then(response => response.text())
         .then(data => {
             parseAndDisplay(data);
@@ -43,18 +44,14 @@ const minutes = minutesRaw || "0";
         const value = parseInt(duration);
 
         let updatedTimeMillis = baseTime.getTime();
-        console.log('Initial millis:', updatedTimeMillis);
 
         if (duration.includes('h')) {
-            console.log('Adding hours to endTime');
             updatedTimeMillis += value * 60 * 60 * 1000; // Add hours in milliseconds
         } else if (duration.includes('m')) {
-            console.log('Adding minutes to endTime');
             updatedTimeMillis += value * 60 * 1000; // Add minutes in milliseconds
         }
 
         let updatedTime = new Date(updatedTimeMillis);
-        console.log('Updated millis:', updatedTimeMillis);
 
         const timeblockDiv = document.createElement('div');
         timeblockDiv.className = 'timeblock';
@@ -67,15 +64,20 @@ const minutes = minutesRaw || "0";
         const isAfterStartTime = now.getTime() >= baseTime.getTime();
         const isBeforeEndTime = now.getTime() <= updatedTime.getTime();
 
-        console.log("Is after start time:", isAfterStartTime);
-        console.log("Is before end time:", isBeforeEndTime);
-
         if (isAfterStartTime && isBeforeEndTime) {
             timeblockDiv.classList.add('current');
         }
 
         // Calculate total duration of the block in milliseconds
 const totalDurationMillis = updatedTimeMillis - baseTime.getTime();
+
+// Calculate percentage of the block that has passed
+const percentagePassed = (now.getTime() - baseTime.getTime()) / totalDurationMillis;
+
+// Update the width of the #progress_bar div
+const progressBarDiv = document.getElementById('progress_bar');
+progressBarDiv.style.width = `${percentagePassed * 100}%`;
+
 
 // Calculate 15% of that duration
 const last15PercentMillis = totalDurationMillis * 0.15;
@@ -85,12 +87,14 @@ if (now.getTime() >= (updatedTimeMillis - last15PercentMillis) && now.getTime() 
     timeblockDiv.classList.add('ending');
 }
 
-        timelineDiv.appendChild(timeblockDiv);
+// If the description contains "[" and "]", add a class to the timeblock
+if (description.includes('[') && description.includes(']')) {
+    timeblockDiv.classList.add('offline');
+    // Remove the brackets from the description and re-add it
+    timeblockDiv.innerHTML = `<div class="start_time">${formatTime(baseTime)}</div><div class="description">${description.replace('[', '').replace(']', '')}</div>`;
+}
 
-        console.log('Start Time:', formatTime(baseTime));
-        console.log('End Time:', formatTime(updatedTime)); // Log the End Time before updating baseTime
-        console.log('Current Time:', formatTime(now));
-        console.log('Parsed Duration:', value);
+        timelineDiv.appendChild(timeblockDiv);
 
         baseTime = updatedTime; // Update the base time for the next iteration
         baseTime.setMinutes(baseTime.getMinutes() + 1); // Add 1 minute to the base time
@@ -109,8 +113,9 @@ function formatTime(date) {
     return strTime;
 }
 
-// Initial load
-fetchFile();
+function fetchAndUpdate() {
+    fetchFile();
+    setTimeout(fetchAndUpdate, 5000);
+}
 
-// Update every 2 seconds
-setInterval(fetchFile, 2000);
+fetchAndUpdate(); // initial call

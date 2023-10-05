@@ -1,8 +1,14 @@
-9:52am
-1m - Thing
-15m - Prodigies staff accounts fix
-25m - Sanctuary ABS Fix
+10:35am
+5m - Message Rob back
+62m - Prodigies staff accounts fix
+55m - Sanctuary event thumbnail revisions
+35m - Sanctuary ABS Fix
 5m - Add "Sheet music is wide" checkbox to P7
+30m - [Bath]
+2h - [Playing videogames with Phoenix]
+30m - Work on time blocker
+1m - Cancel SongPop subscription
+1m - Cancel Omnifocus subscription
+15m - Set up internal siteground server
+10m - Dolphin text edits
 45m - Add "Notes Used" for each solfege/key signature variation
-5m - Cancel SongPop subscription
-10m - Cancel Omnifocus subscription
