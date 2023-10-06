@@ -23,6 +23,13 @@ function parseAndDisplay(data) {
         }
     }
 
+    // If line doesn't start with a number, return the text as is and don't parse it
+    for (let i = 0; i < lines.length; i++) {
+        if (!lines[i].trim().match(/^\d/)) {
+            lines[i] = lines[i].trim();
+        }
+    }
+
     const startTime = new Date();
     startTime.setHours(0, 0, 0, 0); // Set to start of the day (midnight)
 
@@ -47,6 +54,16 @@ const minutes = minutesRaw || "0";
     let baseTime = new Date(startTime.getTime());
 
     for (let i = 1; i < lines.length; i++) {
+
+        // If the line doesn't start with a number, create a memo div with text
+        if (!lines[i].trim().match(/^\d/)) {
+            const memoDiv = document.createElement('div');
+            memoDiv.className = 'memo';
+            memoDiv.innerHTML = lines[i].trim();
+            timelineDiv.appendChild(memoDiv);
+            continue;
+        }
+
         const [duration, description] = lines[i].split(' - ');
 
         const value = parseInt(duration);
@@ -98,6 +115,8 @@ const last15PercentMillis = totalDurationMillis * 0.15;
 // Check if the current time is within the last 15% of the block
 if (now.getTime() >= (updatedTimeMillis - last15PercentMillis) && now.getTime() <= updatedTimeMillis) {
     timeblockDiv.classList.add('ending');
+} else {
+    timeblockDiv.classList.remove('ending');
 }
 
 // If the description contains "[" and "]", add a class to the timeblock
@@ -106,6 +125,12 @@ if (description.includes('[') && description.includes(']')) {
     // Remove the brackets from the description and re-add it
     timeblockDiv.innerHTML = `<div class="start_time">${formatTime(baseTime)}</div><div class="description">${description.replace('[', '').replace(']', '')}</div>`;
 }
+
+        // If the description contains a "#", add a span with the class "project" to the timeblock
+        if (description.includes('#')) {
+            const project = description.match(/#(\w+)/)[1];
+            timeblockDiv.innerHTML = `<div class="start_time">${formatTime(baseTime)}</div><div class="description">${description.replace('#' + project, `<span class="project">#${project}</span>`)}</div>`;
+        }
 
         timelineDiv.appendChild(timeblockDiv);
 
@@ -117,9 +142,8 @@ if (description.includes('[') && description.includes(']')) {
     // Get the height of the timeline div
     const timelineHeight = timelineDiv.offsetHeight;
     // scale font sizee based on height of timeline
-    const fontSize = 19;
+    const fontSize = 19 * (timelineHeight / 800);
     timelineDiv.style.fontSize = `${fontSize}px`;
-
 }
 
 
