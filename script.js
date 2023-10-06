@@ -133,8 +133,6 @@ function parseAndDisplay(data) {
         // Check if the current time is within the last 15% of the block
         if (now.getTime() >= (updatedTimeMillis - last15PercentMillis) && now.getTime() <= updatedTimeMillis) {
             timeblockDiv.classList.add('ending');
-        } else {
-            timeblockDiv.classList.remove('ending');
         }
 
         // If the description contains "[" and "]", add a class to the timeblock
