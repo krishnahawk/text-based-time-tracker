@@ -4,14 +4,29 @@ now.setHours(0, 0, 0, 0);
 
 
 // const now = new Date("Wed Oct 04 2023 20:20:00 GMT-1000");
-const filePath = 'timeblock.txt'; // Replace with your local file path
+// const filePath = 'timeblock.txt'; // Replace with your local file path
+// today's date in iso format
+const today = now.toISOString().split('T')[0];
+const filePath = 'blox/' + today + '.blox'; // Replace with your local file path
+const exampleFilePath = 'blox/YYYY-MM-DD.blox';
 function fetchFile() {
-    const filePathWithCacheBuster = `timeblock.txt?cacheBuster=${new Date().getTime()}`;
+    const filePathWithCacheBuster = filePath + `?cacheBuster=${new Date().getTime()}`;
     fetch(filePathWithCacheBuster)
         .then(response => response.text())
         .then(data => {
             parseAndDisplay(data);
-        });
+        }
+        ).catch(error => {
+            console.log('Error fetching file:', error);
+            // If the file doesn't exist, display an example file
+            fetch(exampleFilePath)
+                .then(response => response.text())
+                .then(data => {
+                    parseAndDisplay(data);
+                }
+                );
+        }
+        );
 }
 
 function parseAndDisplay(data) {
@@ -34,8 +49,8 @@ function parseAndDisplay(data) {
     startTime.setHours(0, 0, 0, 0); // Set to start of the day (midnight)
 
     const [_, hour, minutesRaw, ampm] = lines[0].match(/(\d+)(?::(\d+))?(am|pm)/i);
-const minutes = minutesRaw || "0";
-;
+    const minutes = minutesRaw || "0";
+    ;
     if (ampm.toLowerCase() === 'pm' && hour !== "12") {
         startTime.setHours(parseInt(hour) + 12);
 
@@ -78,10 +93,13 @@ const minutes = minutesRaw || "0";
 
         let updatedTime = new Date(updatedTimeMillis);
 
+        // In the description, wrap any words starting with a @ in a span with class "client", and wrap any words starting with a # in a span with class "project"
+        const descriptionWithClasses = description.replace(/(@\w+)/g, '<span class="client">$1</span>').replace(/(#\w+)/g, '<span class="project">$1</span>');
+
         const timeblockDiv = document.createElement('div');
         timeblockDiv.className = 'timeblock';
         // timeblockDiv.innerHTML = `${formatTime(baseTime)} - ${formatTime(updatedTime)}: ${description}`;
-        timeblockDiv.innerHTML = `<div class="start_time">${formatTime(baseTime)}</div><div class="description">${description}</div>`;
+        timeblockDiv.innerHTML = `<div class="start_time">${formatTime(baseTime)}</div><div class="description">${descriptionWithClasses}</div>`;
         const now = new Date();
         now.setSeconds(0);
         now.setMilliseconds(0);
@@ -94,42 +112,36 @@ const minutes = minutesRaw || "0";
         }
 
         // Calculate total duration of the block in milliseconds
-const totalDurationMillis = updatedTimeMillis - baseTime.getTime();
+        const totalDurationMillis = updatedTimeMillis - baseTime.getTime();
 
-// Calculate percentage of the block that has passed
-const percentagePassed = (now.getTime() - baseTime.getTime()) / totalDurationMillis;
+        // Calculate percentage of the block that has passed
+        const percentagePassed = (now.getTime() - baseTime.getTime()) / totalDurationMillis;
 
-// Update the width of the #progress_bar div
-const progressBarDiv = document.getElementById('progress_bar');
+        // Update the width of the #progress_bar div
+        const progressBarDiv = document.getElementById('progress_bar');
 
-progressBarDiv.style.width = `${percentagePassed * 100}%`;
-if (percentagePassed < 0.15) {
-    progressBarDiv.classList.add('progress_bar_inactive');
-} else {
-    progressBarDiv.classList.remove('progress_bar_inactive');
-}
+        progressBarDiv.style.width = `${percentagePassed * 100}%`;
+        if (percentagePassed < 0.15) {
+            progressBarDiv.classList.add('progress_bar_inactive');
+        } else {
+            progressBarDiv.classList.remove('progress_bar_inactive');
+        }
 
-// Calculate 15% of that duration
-const last15PercentMillis = totalDurationMillis * 0.15;
+        // Calculate 15% of that duration
+        const last15PercentMillis = totalDurationMillis * 0.15;
 
-// Check if the current time is within the last 15% of the block
-if (now.getTime() >= (updatedTimeMillis - last15PercentMillis) && now.getTime() <= updatedTimeMillis) {
-    timeblockDiv.classList.add('ending');
-} else {
-    timeblockDiv.classList.remove('ending');
-}
+        // Check if the current time is within the last 15% of the block
+        if (now.getTime() >= (updatedTimeMillis - last15PercentMillis) && now.getTime() <= updatedTimeMillis) {
+            timeblockDiv.classList.add('ending');
+        } else {
+            timeblockDiv.classList.remove('ending');
+        }
 
-// If the description contains "[" and "]", add a class to the timeblock
-if (description.includes('[') && description.includes(']')) {
-    timeblockDiv.classList.add('offline');
-    // Remove the brackets from the description and re-add it
-    timeblockDiv.innerHTML = `<div class="start_time">${formatTime(baseTime)}</div><div class="description">${description.replace('[', '').replace(']', '')}</div>`;
-}
-
-        // If the description contains a "#", add a span with the class "project" to the timeblock
-        if (description.includes('#')) {
-            const project = description.match(/#(\w+)/)[1];
-            timeblockDiv.innerHTML = `<div class="start_time">${formatTime(baseTime)}</div><div class="description">${description.replace('#' + project, `<span class="project">#${project}</span>`)}</div>`;
+        // If the description contains "[" and "]", add a class to the timeblock
+        if (description.includes('[') && description.includes(']')) {
+            timeblockDiv.classList.add('offline');
+            // Remove the brackets from the description and re-add it
+            timeblockDiv.innerHTML = `<div class="start_time">${formatTime(baseTime)}</div><div class="description">${description.replace('[', '').replace(']', '')}</div>`;
         }
 
         timelineDiv.appendChild(timeblockDiv);
