@@ -50,6 +50,8 @@ function parseAndDisplay(data) {
 
     // TODO: If just a number is entered without m or h, it should assume it is minutes
     // TODO: If a mix of h and m is entered (like 1h26m) it should calculate the total duration
+    // TODO: The very next time entry from the current one should tell you how long you have until the next time entry
+    // FIXME: There should only be one timeblock highlighted at a time, right now there are overlapping minutes when one is ending and the other is starting
     const [_, hour, minutesRaw, ampm] = lines[0].match(/(\d+)(?::(\d+))?(am|pm)/i);
     const minutes = minutesRaw || "0";
     ;
