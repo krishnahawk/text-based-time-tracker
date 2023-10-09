@@ -48,6 +48,8 @@ function parseAndDisplay(data) {
     const startTime = new Date();
     startTime.setHours(0, 0, 0, 0); // Set to start of the day (midnight)
 
+    // TODO: If just a number is entered without m or h, it should assume it is minutes
+    // TODO: If a mix of h and m is entered (like 1h26m) it should calculate the total duration
     const [_, hour, minutesRaw, ampm] = lines[0].match(/(\d+)(?::(\d+))?(am|pm)/i);
     const minutes = minutesRaw || "0";
     ;
