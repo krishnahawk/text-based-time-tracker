@@ -1,3 +1,5 @@
+// TODO: When user mouses over bottom status bar, slide up status like time remaining, total time planned for the day, etc.
+// TODO: Add text editor that allows you to edit the file directly from the browser, either by clicking a mouseover nav item or by pressing "e" on the keyboard
 // Set time to 12:00am
 const now = new Date();
 now.setHours(0, 0, 0, 0);
