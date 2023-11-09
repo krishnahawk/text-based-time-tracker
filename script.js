@@ -131,9 +131,13 @@ function parseAndDisplay(data) {
 
         const isAfterStartTime = now.getTime() >= baseTime.getTime();
         const isBeforeEndTime = now.getTime() <= updatedTime.getTime();
-
-        if (isAfterStartTime && isBeforeEndTime) {
+        const isBeforeEndTimeMinusOneMinute = now.getTime() <= (updatedTime.getTime() - 60000);
+        if (isAfterStartTime && isBeforeEndTimeMinusOneMinute) {
             timeblockDiv.classList.add('current');
+            // Add start time to the data-start-time attribute
+            timeblockDiv.setAttribute('data-start-time', baseTime.getTime());
+            // Add end time to the data-end-time attribute
+            timeblockDiv.setAttribute('data-end-time', updatedTimeMillis);
         }
 
         // Calculate total duration of the block in milliseconds
@@ -142,23 +146,18 @@ function parseAndDisplay(data) {
         // Calculate percentage of the block that has passed
         const percentagePassed = (now.getTime() - baseTime.getTime()) / totalDurationMillis;
 
-        // Update the width of the #progress_bar div
-        const progressBarDiv = document.getElementById('progress_bar');
+        // // Update the width of the #progress_bar div
+        // const progressBarDiv = document.getElementById('progress_bar');
 
-        progressBarDiv.style.width = `${percentagePassed * 100}%`;
-        if (percentagePassed < 0.15) {
-            progressBarDiv.classList.add('progress_bar_inactive');
-        } else {
-            progressBarDiv.classList.remove('progress_bar_inactive');
-        }
+        // progressBarDiv.style.width = `${percentagePassed * 100}%`;
+        // if (percentagePassed < 0.15) {
+        //     progressBarDiv.classList.add('progress_bar_inactive');
+        // } else {
+        //     progressBarDiv.classList.remove('progress_bar_inactive');
+        // }
 
         // Calculate 15% of that duration
-        const last15PercentMillis = totalDurationMillis * 0.15;
-
-        // Check if the current time is within the last 15% of the block
-        if (now.getTime() >= (updatedTimeMillis - last15PercentMillis) && now.getTime() <= updatedTimeMillis) {
-            timeblockDiv.classList.add('ending');
-        }
+        const last15PercentMillis = totalDurationMillis * 0.25;
 
         // If the description contains "[" and "]", add a class to the timeblock
         if (description.includes('[') && description.includes(']')) {
@@ -170,7 +169,7 @@ function parseAndDisplay(data) {
         timelineDiv.appendChild(timeblockDiv);
 
         baseTime = updatedTime; // Update the base time for the next iteration
-        baseTime.setMinutes(baseTime.getMinutes() - 1); // Add 1 minute to the base time
+        // baseTime.setMinutes(baseTime.getMinutes() - 1); // Add 1 minute to the base time
 
     }
 
@@ -193,11 +192,79 @@ function formatTime(date) {
     return strTime;
 }
 
-function fetchAndUpdate() {
-    fetchFile();
-    setTimeout(fetchAndUpdate, 5000);
+function updateCurrentTimeRemaining() {
+    // Get the current timeblock
+    const currentBlock = document.querySelector('.current');
+    // Get the end time of the current timeblock
+    const endTime = currentBlock.getAttribute('data-end-time');
+    const startTime = currentBlock.getAttribute('data-start-time');
+    // Get the total duration of the current timeblock in milliseconds
+    const totalDurationMillis = endTime - startTime;
+    // Get the current unix time
+    const now = new Date();
+    // Calculate the time remaining in milliseconds
+    const timeRemainingMillis = endTime - now.getTime();
+    // Convert milliseconds to seconds
+    const timeRemainingSeconds = Math.floor(timeRemainingMillis / 1000);
+    // Convert seconds to minutes
+    const timeRemainingMinutes = Math.floor(timeRemainingSeconds / 60);
+    // Subtract the minutes from the seconds
+    const timeRemainingSecondsMinusMinutes = timeRemainingSeconds - (timeRemainingMinutes * 60);
+    // Don't allow negative time remaining to be displayed
+    if (timeRemainingSecondsMinusMinutes < 0) {
+        timeRemainingSecondsMinusMinutes = 0;
+    }
+    if (timeRemainingMinutes < 0) {
+        timeRemainingMinutes = 0;
+    }
+    if (timeRemainingSeconds < 0) {
+        timeRemainingSeconds = 0;
+    }
+    if (timeRemainingMillis < 0) {
+        timeRemainingMillis = 0;
+    }
+    // Calculate the percentage of the timeblock that has passed
+    const percentagePassed = (now.getTime() - startTime) / totalDurationMillis;
+    // Update the width of the #progress_bar div
+    const progressBarDiv = document.getElementById('progress_bar');
+    progressBarDiv.style.width = `${percentagePassed * 100}%`;
+
+    // Update the time remaining div
+    const timeRemainingDiv = document.getElementById('time_remaining');
+    timeRemainingDiv.innerHTML = `${timeRemainingMinutes}m ${timeRemainingSecondsMinusMinutes}s`;
+    // If the percentage passed is greater than 85%, add a class to the time remaining div
+    if (percentagePassed > 0.50) {
+        timeRemainingDiv.classList.add('last_half');
+    } else {
+        timeRemainingDiv.classList.remove('last_half');
+    }
+    // If the time remaining is less than 1 minute, add a class to the time remaining div
+    if (timeRemainingMinutes < 1) {
+        timeRemainingDiv.classList.add('less_than_one_minute');
+        // Add .ending class to the current timeblock
+        currentBlock.classList.add('ending');
+    } else {
+        timeRemainingDiv.classList.remove('less_than_one_minute');
+        // Remove .ending class from the current timeblock
+        currentBlock.classList.remove('ending');
+    }
 }
 
+function scrollToCurrent() {
+    const currentBlock = document.querySelector('.current');
+    if (currentBlock) {
+        currentBlock.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+}
+// Call scrollToCurrent() every second
+setInterval(scrollToCurrent, 1000);
 
+// Call updateCurrentTimeRemaining() every second
+setInterval(updateCurrentTimeRemaining, 1000);
+
+function fetchAndUpdate() {
+    fetchFile();
+    setTimeout(fetchAndUpdate, 2000);
+}
 
 fetchAndUpdate(); // initial call

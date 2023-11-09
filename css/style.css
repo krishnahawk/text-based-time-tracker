@@ -13,6 +13,38 @@ body {
     justify-content: center;
     /* overflow:hidden; */
     line-height: 1.5;
+    padding-top: 50vh;
+    }
+    
+    div#time_remaining_container {
+        position: fixed;
+        top: 0;
+        bottom: auto;
+        right: 0;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    div#time_remaining_container div#time_remaining {
+        font-size: 2rem;
+        color: #23D6AA;
+    }
+    
+    div#time_remaining_container p {
+        margin: 0;
+        padding: 0;
+        text-transform: uppercase;
+        color: #909298;
+    }
+    
+    div#time_remaining_container #time_remaining.last_half {
+        color: #CF8222;
+    }
+    
+    div#time_remaining_container #time_remaining.less_than_one_minute {
+        color: #CF2260;
 }
 
 #timeline {
@@ -23,6 +55,7 @@ body {
     width: 100%;
     max-width: 800px;
     height: 100vh;
+    scroll-behavior: smooth;
 }
 
 .timeblock {
