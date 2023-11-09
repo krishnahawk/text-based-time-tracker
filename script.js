@@ -76,6 +76,25 @@ function parseAndDisplay(data) {
 
     for (let i = 1; i < lines.length; i++) {
 
+        const line = lines[i].trim();
+
+        // Check if the line is a new start time
+        const newTimeMatch = line.match(/(\d+)(?::(\d+))?(am|pm)/i);
+        if (newTimeMatch) {
+            // Parse the new start time and update baseTime
+            const [_, hour, minutesRaw, ampm] = newTimeMatch;
+            const minutes = minutesRaw || "0";
+            let newBaseTime = new Date(baseTime.getTime());
+            newBaseTime.setHours(parseInt(hour) + (ampm.toLowerCase() === 'pm' && hour !== "12" ? 12 : 0));
+            newBaseTime.setMinutes(parseInt(minutes));
+            newBaseTime.setSeconds(0); // Reset seconds
+            newBaseTime.setMilliseconds(0); // Reset milliseconds
+            if (ampm.toLowerCase() === 'am' && hour === "12") {
+                newBaseTime.setHours(0);
+            }
+            baseTime = newBaseTime;
+            continue; // Skip to next iteration as this line is just a time
+        }
         // If the line doesn't start with a number, create a memo div with text
         if (!lines[i].trim().match(/^\d/)) {
             const memoDiv = document.createElement('div');
@@ -160,6 +179,7 @@ function parseAndDisplay(data) {
     // scale font sizee based on height of timeline
     const fontSize = 19 * (timelineHeight / 800);
     timelineDiv.style.fontSize = `${fontSize}px`;
+
 }
 
 
@@ -177,5 +197,7 @@ function fetchAndUpdate() {
     fetchFile();
     setTimeout(fetchAndUpdate, 5000);
 }
+
+
 
 fetchAndUpdate(); // initial call
