@@ -1,0 +1,2174 @@
+{
+    "entries": [
+        {
+            "date": "2023-11-02",
+            "hours": 0.25,
+            "client": null,
+            "project": null,
+            "description": "Time blocking"
+        },
+        {
+            "date": "2023-11-02",
+            "hours": 1.25,
+            "client": null,
+            "project": null,
+            "description": "Time blocking cleanup"
+        },
+        {
+            "date": "2023-11-02",
+            "hours": 0.08,
+            "client": null,
+            "project": null,
+            "description": "Bathroom"
+        },
+        {
+            "date": "2023-11-02",
+            "hours": 0.5,
+            "client": "KRISHNAHAWK",
+            "project": "Billing",
+            "description": "Prep invoices through today Billing"
+        },
+        {
+            "date": "2023-11-02",
+            "hours": 0.17,
+            "client": null,
+            "project": "Inbox Zero",
+            "description": "Inbox Zero"
+        },
+        {
+            "date": "2023-11-02",
+            "hours": 0.33,
+            "client": "Sanctuary Of The Open Heart",
+            "project": "Winter Solstice 2023",
+            "description": "Peter Gabriel re-edit for Winter Solstice 2023"
+        },
+        {
+            "date": "2023-11-02",
+            "hours": 0.25,
+            "client": "Prodigies",
+            "project": null,
+            "description": "Slack checkin for"
+        },
+        {
+            "date": "2023-11-02",
+            "hours": 0.25,
+            "client": "Sanctuary Of The Open Heart",
+            "project": "Archetypal Resonance Quiz",
+            "description": "Archetypal Resonance Quiz integration for"
+        },
+        {
+            "date": "2023-11-02",
+            "hours": 0.33,
+            "client": "Sanctuary Of The Open Heart",
+            "project": null,
+            "description": "Write fresh webhook handlers for Stripe and IPN handlers for PayPal"
+        },
+        {
+            "date": "2023-11-02",
+            "hours": 0.5,
+            "client": "Sanctuary Of The Open Heart",
+            "project": null,
+            "description": "Constant Contact code update for"
+        },
+        {
+            "date": "2023-11-02",
+            "hours": 0.5,
+            "client": "Prodigies",
+            "project": "Sheet Music Tool",
+            "description": "Sheet Music Tool button colors and quick fixes"
+        },
+        {
+            "date": "2023-11-02",
+            "hours": 0.33,
+            "client": "Sanctuary Of The Open Heart",
+            "project": null,
+            "description": "Formidable login form fix"
+        },
+        {
+            "date": "2023-11-02",
+            "hours": 1,
+            "client": "Sanctuary Of The Open Heart",
+            "project": "13 Moon Oracle",
+            "description": "13 Moon Oracle Hype layout recreation"
+        },
+        {
+            "date": "2023-11-02",
+            "hours": 0.5,
+            "client": null,
+            "project": null,
+            "description": "NaNoWriMo dash"
+        },
+        {
+            "date": "2023-11-02",
+            "hours": 0.17,
+            "client": "Ariel Spilsbury",
+            "project": "Holographic Goddess",
+            "description": "Process 2023-10-31 meeting tasks Holographic Goddess"
+        },
+        {
+            "date": "2023-11-02",
+            "hours": 0.5,
+            "client": "Prodigies",
+            "project": "Sheet Music Tool",
+            "description": "Sheet Music Tool ACF field updates"
+        },
+        {
+            "date": "2023-11-02",
+            "hours": 0.5,
+            "client": "KRISHNAHAWK",
+            "project": "Gridpane Migration",
+            "description": "Gridpane Migration from Siteground (untetheredcircle.com, mermaiddreamssanctuary.com, konamermaidschool.com, alyhawk.com)"
+        },
+        {
+            "date": "2023-11-02",
+            "hours": 0.17,
+            "client": null,
+            "project": null,
+            "description": "Peanut Butter Crackers for Phoenix"
+        },
+        {
+            "date": "2023-11-02",
+            "hours": 0.17,
+            "client": "Ariel Spilsbury",
+            "project": "Holographic Goddess",
+            "description": "Replacing temple map on Holographic Goddess"
+        },
+        {
+            "date": "2023-11-02",
+            "hours": 0.42,
+            "client": "Ariel Spilsbury",
+            "project": "Holographic Goddess",
+            "description": "Find Ariel's writings from around the web and add to blog Holographic Goddess"
+        },
+        {
+            "date": "2023-11-02",
+            "hours": 0.17,
+            "client": "Ariel Spilsbury",
+            "project": "Holographic Goddess",
+            "description": "Online oracle tool on Oracle sales page for try before you buy Holographic Goddess"
+        },
+        {
+            "date": "2023-11-02",
+            "hours": 0.25,
+            "client": "Ariel Spilsbury",
+            "project": "Holographic Goddess",
+            "description": "600-word marketing plan for Holographic Goddess"
+        },
+        {
+            "date": "2023-11-02",
+            "hours": 0.25,
+            "client": null,
+            "project": "Learning",
+            "description": "Laracasts Course Learning"
+        },
+        {
+            "date": "2023-11-02",
+            "hours": 0.33,
+            "client": null,
+            "project": null,
+            "description": "Continue filling up my voicemail"
+        },
+        {
+            "date": "2023-11-02",
+            "hours": 0.17,
+            "client": "KRISHNAHAWK",
+            "project": "Timeblox",
+            "description": "Add emoji library adding functionality to Timeblox"
+        },
+        {
+            "date": "2023-11-02",
+            "hours": 0.17,
+            "client": null,
+            "project": null,
+            "description": "Entering Pokemon codes"
+        },
+        {
+            "date": "2023-11-02",
+            "hours": 0.5,
+            "client": null,
+            "project": null,
+            "description": "One lesson of Laravel course"
+        },
+        {
+            "date": "2023-11-02",
+            "hours": 0.17,
+            "client": "KRISHNAHAWK",
+            "project": "Bookkeeping",
+            "description": "Quickbooks receipt processing Bookkeeping"
+        },
+        {
+            "date": "2023-10-11",
+            "hours": 0.5,
+            "client": "Sanctuary Of The Open Heart",
+            "project": null,
+            "description": "Replying to Email from Argon"
+        },
+        {
+            "date": "2023-10-11",
+            "hours": 0.17,
+            "client": null,
+            "project": null,
+            "description": "Bathroom"
+        },
+        {
+            "date": "2023-10-11",
+            "hours": 0.08,
+            "client": null,
+            "project": null,
+            "description": "Helping Phoenix with nintendo"
+        },
+        {
+            "date": "2023-10-11",
+            "hours": 0.17,
+            "client": "Sanctuary Of The Open Heart",
+            "project": "Meeting",
+            "description": "Meeting Prep for"
+        },
+        {
+            "date": "2023-10-11",
+            "hours": 0.17,
+            "client": "Sanctuary Of The Open Heart",
+            "project": "Billing Portal",
+            "description": "Creating filestructure for Billing Portal"
+        },
+        {
+            "date": "2023-10-11",
+            "hours": 0.5,
+            "client": "Sanctuary Of The Open Heart",
+            "project": null,
+            "description": "Making sure ABS membership is set up correctly and listed in ABS directory"
+        },
+        {
+            "date": "2023-10-11",
+            "hours": 0.17,
+            "client": "Sanctuary Of The Open Heart",
+            "project": null,
+            "description": "Answering Argon's questions via Email"
+        },
+        {
+            "date": "2023-10-11",
+            "hours": 0.17,
+            "client": "Sanctuary Of The Open Heart",
+            "project": null,
+            "description": "Welcome email for Silvie"
+        },
+        {
+            "date": "2023-10-11",
+            "hours": 1.33,
+            "client": "Sanctuary Of The Open Heart",
+            "project": "Meeting",
+            "description": "Meeting with Argon"
+        },
+        {
+            "date": "2023-10-11",
+            "hours": 0.08,
+            "client": "Sanctuary Of The Open Heart",
+            "project": null,
+            "description": "Fix ABS membership link"
+        },
+        {
+            "date": "2023-10-11",
+            "hours": 4,
+            "client": "KRISHNAHAWK",
+            "project": "Billing Portal",
+            "description": "Function coding dash for generic Billing Portal app"
+        },
+        {
+            "date": "2023-10-11",
+            "hours": 1.5,
+            "client": "KRISHNAHAWK",
+            "project": "Billing Portal",
+            "description": "Interface coding dash for generic Billing Portal app"
+        },
+        {
+            "date": "2023-10-12",
+            "hours": 0.25,
+            "client": null,
+            "project": null,
+            "description": "Time blocking"
+        },
+        {
+            "date": "2023-10-12",
+            "hours": 0.42,
+            "client": "Heather Reynolds",
+            "project": "A Dolphin Named Destiny Book",
+            "description": "Sending A Dolphin Named Destiny Book Dropbox files to"
+        },
+        {
+            "date": "2023-10-09",
+            "hours": 0.03,
+            "client": null,
+            "project": null,
+            "description": "First Adderall"
+        },
+        {
+            "date": "2023-10-09",
+            "hours": 0.67,
+            "client": null,
+            "project": null,
+            "description": "Planning day"
+        },
+        {
+            "date": "2023-10-09",
+            "hours": 0.58,
+            "client": "KRISHNAHAWK",
+            "project": "Taskblox",
+            "description": "Transferring tasks into Taskblox"
+        },
+        {
+            "date": "2023-10-09",
+            "hours": 0.08,
+            "client": null,
+            "project": null,
+            "description": "Chai"
+        },
+        {
+            "date": "2023-10-09",
+            "hours": 0.08,
+            "client": null,
+            "project": null,
+            "description": "Laundry"
+        },
+        {
+            "date": "2023-10-09",
+            "hours": 0.5,
+            "client": null,
+            "project": null,
+            "description": "Talking to Aly and Phoenix"
+        },
+        {
+            "date": "2023-10-09",
+            "hours": 0.25,
+            "client": null,
+            "project": null,
+            "description": "Email processing"
+        },
+        {
+            "date": "2023-10-09",
+            "hours": 0.25,
+            "client": null,
+            "project": null,
+            "description": "Email Responding"
+        },
+        {
+            "date": "2023-10-09",
+            "hours": 0.17,
+            "client": "Prodigies",
+            "project": null,
+            "description": "Slack check in"
+        },
+        {
+            "date": "2023-10-09",
+            "hours": 0.08,
+            "client": null,
+            "project": null,
+            "description": "Laundry"
+        },
+        {
+            "date": "2023-10-09",
+            "hours": 0.08,
+            "client": null,
+            "project": null,
+            "description": "Paying credit card bill"
+        },
+        {
+            "date": "2023-10-09",
+            "hours": 0.08,
+            "client": "Heather Reynolds",
+            "project": "Mermaid Tales Press",
+            "description": "Set up SSL on siteground for Mermaid Tales Press"
+        },
+        {
+            "date": "2023-10-09",
+            "hours": 0.5,
+            "client": "Heather Reynolds",
+            "project": "Mermaid Tales Press",
+            "description": "Clone starter page to Mermaid Tales Press domain"
+        },
+        {
+            "date": "2023-10-09",
+            "hours": 0.75,
+            "client": "KRISHNAHAWK",
+            "project": null,
+            "description": "Writing internal API for site management"
+        },
+        {
+            "date": "2023-10-09",
+            "hours": 0.25,
+            "client": null,
+            "project": null,
+            "description": "Text message responding"
+        },
+        {
+            "date": "2023-10-09",
+            "hours": 0.03,
+            "client": null,
+            "project": null,
+            "description": "Second Adderall"
+        },
+        {
+            "date": "2023-10-09",
+            "hours": 0.08,
+            "client": null,
+            "project": null,
+            "description": "Smoothie"
+        },
+        {
+            "date": "2023-10-09",
+            "hours": 0.5,
+            "client": "Ariel Spilsbury",
+            "project": "Holographic Goddess",
+            "description": "Diagnose customer issue purchasing 13 Moon Oracle Course on Holographic Goddess, email solution to"
+        },
+        {
+            "date": "2023-10-09",
+            "hours": 2.42,
+            "client": "Sanctuary Of The Open Heart",
+            "project": "Aligned Business Sponsorship",
+            "description": "Aligned Business Sponsorship ajaxify ABS signup form"
+        },
+        {
+            "date": "2023-10-09",
+            "hours": 0.22,
+            "client": null,
+            "project": null,
+            "description": "Getting groceries out of the car"
+        },
+        {
+            "date": "2023-10-09",
+            "hours": 1.13,
+            "client": "Sanctuary Of The Open Heart",
+            "project": "Aligned Business Sponsorship",
+            "description": "Aligned Business Sponsorship ajaxify ABS signup form (continued)"
+        },
+        {
+            "date": "2023-10-09",
+            "hours": 0.17,
+            "client": "Sanctuary Of The Open Heart",
+            "project": null,
+            "description": "Reply to Silvie's support email"
+        },
+        {
+            "date": "2023-10-09",
+            "hours": 0.75,
+            "client": "Sanctuary Of The Open Heart",
+            "project": null,
+            "description": "Change out logo and colors on default WP login page in case a visitor stumbles upon it"
+        },
+        {
+            "date": "2023-10-09",
+            "hours": 0.17,
+            "client": "Sanctuary Of The Open Heart",
+            "project": "Aligned Business Sponsorship",
+            "description": "Fix Aligned Business Sponsorship signup form mobile layout"
+        },
+        {
+            "date": "2023-10-09",
+            "hours": 2,
+            "client": "Prodigies",
+            "project": "P7",
+            "description": "P7 download script to mask URL"
+        },
+        {
+            "date": "2023-10-27",
+            "hours": 0.25,
+            "client": null,
+            "project": null,
+            "description": "Time blocking"
+        },
+        {
+            "date": "2023-10-27",
+            "hours": 0.33,
+            "client": "KRISHNAHAWK",
+            "project": null,
+            "description": "Find new uptime monitor to replace Fathom"
+        },
+        {
+            "date": "2023-10-27",
+            "hours": 0.17,
+            "client": "KRISHNAHAWK",
+            "project": null,
+            "description": "Research making my own uptime monitor script"
+        },
+        {
+            "date": "2023-10-27",
+            "hours": 0.08,
+            "client": null,
+            "project": null,
+            "description": "Make Peanut Butter Crackers for Phoenix"
+        },
+        {
+            "date": "2023-10-27",
+            "hours": 0.42,
+            "client": null,
+            "project": null,
+            "description": "Make Phoenix's lunch"
+        },
+        {
+            "date": "2023-10-27",
+            "hours": 0.33,
+            "client": null,
+            "project": null,
+            "description": "Washing dishes"
+        },
+        {
+            "date": "2023-10-27",
+            "hours": 0.25,
+            "client": "Prodigies",
+            "project": null,
+            "description": "Slack checkin"
+        },
+        {
+            "date": "2023-10-27",
+            "hours": 0.17,
+            "client": "Sanctuary Of The Open Heart",
+            "project": null,
+            "description": "Embed Mythic Call video on website"
+        },
+        {
+            "date": "2023-10-27",
+            "hours": 0.58,
+            "client": "Sanctuary Of The Open Heart",
+            "project": null,
+            "description": "Update video embed script to show YouTube embed if no Vimeo ID entered"
+        },
+        {
+            "date": "2023-10-27",
+            "hours": 0.33,
+            "client": "Sanctuary Of The Open Heart",
+            "project": null,
+            "description": "Embed Mythic Call video on website continued"
+        },
+        {
+            "date": "2023-10-27",
+            "hours": 0.42,
+            "client": "Sanctuary Of The Open Heart",
+            "project": null,
+            "description": "Adding Living Library category to website and adding Mythic Call video"
+        },
+        {
+            "date": "2023-10-27",
+            "hours": 0.17,
+            "client": "Sanctuary Of The Open Heart",
+            "project": null,
+            "description": "Email update to Argon and Ariel for Mythic Call appeal status and website update"
+        },
+        {
+            "date": "2023-10-27",
+            "hours": 0.17,
+            "client": null,
+            "project": null,
+            "description": "Upgrading Keyboard Maestro"
+        },
+        {
+            "date": "2023-10-27",
+            "hours": 0.17,
+            "client": null,
+            "project": null,
+            "description": "Pokemon Go Break"
+        },
+        {
+            "date": "2023-10-27",
+            "hours": 0.08,
+            "client": "Sanctuary Of The Open Heart",
+            "project": null,
+            "description": "Set up Focalizer form email notifications"
+        },
+        {
+            "date": "2023-10-27",
+            "hours": 0.08,
+            "client": null,
+            "project": "Inbox Zero",
+            "description": "Inbox Zero"
+        },
+        {
+            "date": "2023-10-27",
+            "hours": 0.33,
+            "client": "Prodigies",
+            "project": "P7",
+            "description": "Fixing permalink issue for thank-you-pages on P7"
+        },
+        {
+            "date": "2023-10-27",
+            "hours": 0.17,
+            "client": "Prodigies",
+            "project": "Sheet Music Tool",
+            "description": "Review Slack feedback and notes for Sheet Music Tool"
+        },
+        {
+            "date": "2023-10-27",
+            "hours": 6,
+            "client": "Prodigies",
+            "project": "Sheet Music Tool",
+            "description": "Sheet Music Tool development"
+        },
+        {
+            "date": "2023-10-27",
+            "hours": 0.08,
+            "client": null,
+            "project": "Inbox Zero",
+            "description": "Inbox Zero"
+        },
+        {
+            "date": "2023-10-20",
+            "hours": 0.33,
+            "client": null,
+            "project": null,
+            "description": "Time blocking"
+        },
+        {
+            "date": "2023-10-20",
+            "hours": 0.83,
+            "client": "KRISHNAHAWK",
+            "project": "Billing",
+            "description": "Billing"
+        },
+        {
+            "date": "2023-10-20",
+            "hours": 0.33,
+            "client": "KRISHNAHAWK",
+            "project": null,
+            "description": "Creating internal link shortener tool"
+        },
+        {
+            "date": "2023-10-20",
+            "hours": 0.5,
+            "client": "KRISHNAHAWK",
+            "project": "Billing",
+            "description": "Finish Billing"
+        },
+        {
+            "date": "2023-10-20",
+            "hours": 0.17,
+            "client": "Heather Reynolds Law",
+            "project": null,
+            "description": "Airtable automation checking for"
+        },
+        {
+            "date": "2023-10-20",
+            "hours": 0.25,
+            "client": "KRISHNAHAWK",
+            "project": "Billing Portal",
+            "description": "Grid fix for internal Billing Portal"
+        },
+        {
+            "date": "2023-10-20",
+            "hours": 0.17,
+            "client": null,
+            "project": null,
+            "description": "Shower and get ready"
+        },
+        {
+            "date": "2023-10-20",
+            "hours": 0.33,
+            "client": null,
+            "project": null,
+            "description": "Driving to parent teacher conference"
+        },
+        {
+            "date": "2023-10-20",
+            "hours": 1.17,
+            "client": null,
+            "project": null,
+            "description": "Parent teacher conference"
+        },
+        {
+            "date": "2023-10-20",
+            "hours": 0.5,
+            "client": null,
+            "project": null,
+            "description": "Driving home from parent teacher conference and foodland"
+        },
+        {
+            "date": "2023-10-20",
+            "hours": 0.08,
+            "client": null,
+            "project": null,
+            "description": "Time blocking regroup"
+        },
+        {
+            "date": "2023-10-20",
+            "hours": 0.17,
+            "client": null,
+            "project": null,
+            "description": "Process tasks inboxes"
+        },
+        {
+            "date": "2023-10-20",
+            "hours": 0.25,
+            "client": "Heather Reynolds",
+            "project": null,
+            "description": "Look over tasks and regroup"
+        },
+        {
+            "date": "2023-10-20",
+            "hours": 0.33,
+            "client": "Heather Reynolds",
+            "project": "Agenda",
+            "description": "Prep Agenda for #Meeting with"
+        },
+        {
+            "date": "2023-10-20",
+            "hours": 0.17,
+            "client": "Mermaid Tales Press",
+            "project": "A Dolphin Named Destiny",
+            "description": "Sending source files to Designer A Dolphin Named Destiny"
+        },
+        {
+            "date": "2023-10-20",
+            "hours": 0.33,
+            "client": "Mermaid Tales Press",
+            "project": "A Dolphin Named Destiny",
+            "description": "Logo design for A Dolphin Named Destiny"
+        },
+        {
+            "date": "2023-10-20",
+            "hours": 0.25,
+            "client": null,
+            "project": null,
+            "description": "Lifting weights"
+        },
+        {
+            "date": "2023-10-20",
+            "hours": 1.25,
+            "client": "Mermaid Tales Press",
+            "project": "A Dolphin Named Destiny",
+            "description": "Preliminary shell build for A Dolphin Named Destiny website"
+        },
+        {
+            "date": "2023-10-20",
+            "hours": 0.17,
+            "client": null,
+            "project": null,
+            "description": "Glove hunt for Aly"
+        },
+        {
+            "date": "2023-10-20",
+            "hours": 0.25,
+            "client": "Mermaid Tales Press",
+            "project": "A Dolphin Named Destiny",
+            "description": "Research Amazon KDP prices A Dolphin Named Destiny"
+        },
+        {
+            "date": "2023-10-20",
+            "hours": 0.17,
+            "client": null,
+            "project": null,
+            "description": "Moving outside for meeting"
+        },
+        {
+            "date": "2023-10-20",
+            "hours": 2.08,
+            "client": "Heather Reynolds",
+            "project": null,
+            "description": "Meeting with"
+        },
+        {
+            "date": "2023-10-20",
+            "hours": 0.5,
+            "client": "KRISHNAHAWK",
+            "project": "Billing Portal",
+            "description": "Make the JS payment form work with Stripe on Billing Portal"
+        },
+        {
+            "date": "2023-10-20",
+            "hours": 0.5,
+            "client": "Sanctuary Of The Open Heart",
+            "project": null,
+            "description": "Support emails for"
+        },
+        {
+            "date": "2023-10-30",
+            "hours": 0.17,
+            "client": null,
+            "project": null,
+            "description": "Time blocking"
+        },
+        {
+            "date": "2023-10-30",
+            "hours": 0.25,
+            "client": null,
+            "project": null,
+            "description": "Bathroom break"
+        },
+        {
+            "date": "2023-10-30",
+            "hours": 1,
+            "client": "Sanctuary Of The Open Heart",
+            "project": null,
+            "description": "Donation email notifications"
+        },
+        {
+            "date": "2023-10-30",
+            "hours": 2,
+            "client": "Sanctuary Of The Open Heart",
+            "project": null,
+            "description": "PayPal refactor"
+        },
+        {
+            "date": "2023-10-30",
+            "hours": 0.17,
+            "client": null,
+            "project": null,
+            "description": "Making Phoenix peanut butter crackers"
+        },
+        {
+            "date": "2023-10-30",
+            "hours": 0.67,
+            "client": null,
+            "project": null,
+            "description": "Making Phoenix's lunch"
+        },
+        {
+            "date": "2023-10-30",
+            "hours": 6,
+            "client": "Sanctuary Of The Open Heart",
+            "project": null,
+            "description": "PayPal refactor"
+        },
+        {
+            "date": "2023-10-30",
+            "hours": 0.75,
+            "client": null,
+            "project": null,
+            "description": "Picking up Phoenix from school"
+        },
+        {
+            "date": "2023-10-30",
+            "hours": 1.5,
+            "client": "Sanctuary Of The Open Heart",
+            "project": null,
+            "description": "PayPal refactor"
+        },
+        {
+            "date": "2023-10-16",
+            "hours": 0.25,
+            "client": null,
+            "project": null,
+            "description": "Time blocking"
+        },
+        {
+            "date": "2023-10-16",
+            "hours": 0.58,
+            "client": null,
+            "project": null,
+            "description": "Email Proccessing"
+        },
+        {
+            "date": "2023-10-16",
+            "hours": 0.17,
+            "client": null,
+            "project": null,
+            "description": "Email replies"
+        },
+        {
+            "date": "2023-10-16",
+            "hours": 2.42,
+            "client": null,
+            "project": "KRISHNAHAWK",
+            "description": "Internal invoice generation tool KRISHNAHAWK"
+        },
+        {
+            "date": "2023-10-16",
+            "hours": 0.58,
+            "client": "KRISHNAHAWK",
+            "project": "Winter Solstice 2023",
+            "description": "Quote for Winter Solstice 2023"
+        },
+        {
+            "date": "2023-10-16",
+            "hours": 0.08,
+            "client": null,
+            "project": null,
+            "description": "Laundry"
+        },
+        {
+            "date": "2023-10-16",
+            "hours": 0.17,
+            "client": null,
+            "project": null,
+            "description": "Texting replies"
+        },
+        {
+            "date": "2023-10-16",
+            "hours": 0.17,
+            "client": "Prodigies",
+            "project": null,
+            "description": "Slack checkin"
+        },
+        {
+            "date": "2023-10-16",
+            "hours": 0.08,
+            "client": null,
+            "project": null,
+            "description": "Pokemon Go break"
+        },
+        {
+            "date": "2023-10-16",
+            "hours": 0.25,
+            "client": "Mermaid Tales Press",
+            "project": "A Dolphin Named Destiny",
+            "description": "A Dolphin Named Destiny book version check"
+        },
+        {
+            "date": "2023-10-16",
+            "hours": 0.17,
+            "client": null,
+            "project": null,
+            "description": "Pokemon Go break"
+        },
+        {
+            "date": "2023-10-16",
+            "hours": 0.08,
+            "client": null,
+            "project": null,
+            "description": "Laundry"
+        },
+        {
+            "date": "2023-10-16",
+            "hours": 0.25,
+            "client": null,
+            "project": null,
+            "description": "Smoothie"
+        },
+        {
+            "date": "2023-10-16",
+            "hours": 1,
+            "client": "KRISHNAHAWK",
+            "project": "Billing Portal",
+            "description": "Working on Billing Portal"
+        },
+        {
+            "date": "2023-10-16",
+            "hours": 0.25,
+            "client": null,
+            "project": null,
+            "description": "Lifting weights"
+        },
+        {
+            "date": "2023-10-16",
+            "hours": 0.5,
+            "client": "KRISHNAHAWK",
+            "project": "Billing Portal",
+            "description": "Billing Portal Stripe API dash"
+        },
+        {
+            "date": "2023-10-26",
+            "hours": 0.25,
+            "client": null,
+            "project": "Yoga",
+            "description": "Yoga"
+        },
+        {
+            "date": "2023-10-26",
+            "hours": 0.25,
+            "client": null,
+            "project": null,
+            "description": "Time blocking"
+        },
+        {
+            "date": "2023-10-26",
+            "hours": 0.17,
+            "client": null,
+            "project": null,
+            "description": "See if Scrivener is still available for Aly's NaNoWriMo"
+        },
+        {
+            "date": "2023-10-26",
+            "hours": 0.17,
+            "client": null,
+            "project": null,
+            "description": "Peanut butter crackers for Phoenix"
+        },
+        {
+            "date": "2023-10-26",
+            "hours": 0.25,
+            "client": null,
+            "project": null,
+            "description": "Finish Phoenix's lunch"
+        },
+        {
+            "date": "2023-10-26",
+            "hours": 0.08,
+            "client": null,
+            "project": null,
+            "description": "Brushing teeth"
+        },
+        {
+            "date": "2023-10-26",
+            "hours": 0.17,
+            "client": null,
+            "project": null,
+            "description": "Cleaning around the house"
+        },
+        {
+            "date": "2023-10-26",
+            "hours": 0.08,
+            "client": null,
+            "project": null,
+            "description": "Resurecting my old NaNoWriMo account"
+        },
+        {
+            "date": "2023-10-26",
+            "hours": 0.33,
+            "client": null,
+            "project": "Inbox Zero",
+            "description": "Inbox Zero"
+        },
+        {
+            "date": "2023-10-26",
+            "hours": 0.67,
+            "client": "Sanctuary Of The Open Heart",
+            "project": null,
+            "description": "PayPal fix"
+        },
+        {
+            "date": "2023-10-26",
+            "hours": 0.5,
+            "client": "Sanctuary Of The Open Heart",
+            "project": null,
+            "description": "Email to Ariel about PayPal issue"
+        },
+        {
+            "date": "2023-10-26",
+            "hours": 0.17,
+            "client": null,
+            "project": null,
+            "description": "Running night of delight lines with Aly"
+        },
+        {
+            "date": "2023-10-26",
+            "hours": 0.17,
+            "client": null,
+            "project": null,
+            "description": "Bathroom break"
+        },
+        {
+            "date": "2023-10-26",
+            "hours": 0.17,
+            "client": "Phoenix Rising Empowerment Project",
+            "project": null,
+            "description": "Add (R) to website"
+        },
+        {
+            "date": "2023-10-26",
+            "hours": 0.17,
+            "client": "Phoenix Rising Empowerment Project",
+            "project": null,
+            "description": "Fixing strange apostrophe character issues on website"
+        },
+        {
+            "date": "2023-10-26",
+            "hours": 0.25,
+            "client": "Prodigies",
+            "project": "P7",
+            "description": "Looking into redirect issues on P7"
+        },
+        {
+            "date": "2023-10-26",
+            "hours": 0.17,
+            "client": null,
+            "project": null,
+            "description": "Visiting with Lisa"
+        },
+        {
+            "date": "2023-10-26",
+            "hours": 0.17,
+            "client": "Phoenix Rising Empowerment Project",
+            "project": null,
+            "description": "Apostrophe issues continued"
+        },
+        {
+            "date": "2023-10-26",
+            "hours": 0.25,
+            "client": "Phoenix Rising Empowerment Project",
+            "project": null,
+            "description": "Addition of (R) symbol continued on website"
+        },
+        {
+            "date": "2023-10-26",
+            "hours": 0.17,
+            "client": null,
+            "project": null,
+            "description": "Bathroom break"
+        },
+        {
+            "date": "2023-10-26",
+            "hours": 0.08,
+            "client": null,
+            "project": null,
+            "description": "laundry"
+        },
+        {
+            "date": "2023-10-26",
+            "hours": 0.67,
+            "client": "Prodigies",
+            "project": "Sheet Music Tool",
+            "description": "Adding tooltips and \"i\" icons to Sheet Music Tool"
+        },
+        {
+            "date": "2023-10-26",
+            "hours": 0.33,
+            "client": "Phoenix Rising Empowerment Project",
+            "project": null,
+            "description": "Talking to WPEngine support about UTF encoding issues on website"
+        },
+        {
+            "date": "2023-10-26",
+            "hours": 1.42,
+            "client": "Prodigies",
+            "project": "Sheet Music Tool",
+            "description": "Checking into notes used exclusion vs inclusion Sheet Music Tool"
+        },
+        {
+            "date": "2023-10-26",
+            "hours": 0.75,
+            "client": null,
+            "project": "Me Time",
+            "description": "Me Time"
+        },
+        {
+            "date": "2023-10-26",
+            "hours": 0.33,
+            "client": "Prodigies",
+            "project": "Sheet Music Tool",
+            "description": "Sheet Music Tool notes used exclusion vs inclusion continued"
+        },
+        {
+            "date": "2023-10-26",
+            "hours": 0.08,
+            "client": "Prodigies",
+            "project": "Sheet Music Tool",
+            "description": "Slack checkin with Rob about Sheet Music Tool"
+        },
+        {
+            "date": "2023-10-26",
+            "hours": 0.08,
+            "client": "Heather Reynolds",
+            "project": null,
+            "description": "Email about copyright and cancelling meeting"
+        },
+        {
+            "date": "2023-10-26",
+            "hours": 0.25,
+            "client": null,
+            "project": "Shaving",
+            "description": "Shaving"
+        },
+        {
+            "date": "2023-10-26",
+            "hours": 0.17,
+            "client": null,
+            "project": "Shower",
+            "description": "Shower"
+        },
+        {
+            "date": "2023-10-26",
+            "hours": 0.5,
+            "client": null,
+            "project": null,
+            "description": "Drive to Waldorf"
+        },
+        {
+            "date": "2023-10-26",
+            "hours": 1.5,
+            "client": null,
+            "project": null,
+            "description": "Night of Delight Rehearsal"
+        },
+        {
+            "date": "2023-10-26",
+            "hours": 0.33,
+            "client": null,
+            "project": null,
+            "description": "Waiting for Aly to pick me up"
+        },
+        {
+            "date": "2023-10-26",
+            "hours": 0.33,
+            "client": null,
+            "project": null,
+            "description": "Driving home"
+        },
+        {
+            "date": "2023-10-26",
+            "hours": 1,
+            "client": null,
+            "project": null,
+            "description": "Family time"
+        },
+        {
+            "date": "2023-10-25",
+            "hours": 0.17,
+            "client": null,
+            "project": null,
+            "description": "Time blocking"
+        },
+        {
+            "date": "2023-10-25",
+            "hours": 0.08,
+            "client": null,
+            "project": null,
+            "description": "Logging Apple Health medication data"
+        },
+        {
+            "date": "2023-10-25",
+            "hours": 0.25,
+            "client": "Prodigies",
+            "project": "P7",
+            "description": "Replying to Rob in Slack P7"
+        },
+        {
+            "date": "2023-10-25",
+            "hours": 0.17,
+            "client": null,
+            "project": null,
+            "description": "Setting Phoenix up with Pokemon TV and peanut butter crackers"
+        },
+        {
+            "date": "2023-10-25",
+            "hours": 0.33,
+            "client": "Prodigies",
+            "project": "P7",
+            "description": "Find Slack notes from P7 Sheet Music review and add to Things"
+        },
+        {
+            "date": "2023-10-25",
+            "hours": 0.17,
+            "client": null,
+            "project": null,
+            "description": "Signing up for Laracasts course platform and watching intro video"
+        },
+        {
+            "date": "2023-10-25",
+            "hours": 0.17,
+            "client": null,
+            "project": null,
+            "description": "Texting Scarlett about sleep book"
+        },
+        {
+            "date": "2023-10-25",
+            "hours": 0.17,
+            "client": "KRISHNAHAWK",
+            "project": "Billing Portal",
+            "description": "Fix login form on Billing Portal"
+        },
+        {
+            "date": "2023-10-25",
+            "hours": 1,
+            "client": "KRISHNAHAWK",
+            "project": "Billing Portal",
+            "description": "Finish Stripe subscription cancellation flow Billing Portal"
+        },
+        {
+            "date": "2023-10-25",
+            "hours": 0.08,
+            "client": null,
+            "project": null,
+            "description": "Grab laundry"
+        },
+        {
+            "date": "2023-10-25",
+            "hours": 0.08,
+            "client": null,
+            "project": null,
+            "description": "Pokemon Go Break"
+        },
+        {
+            "date": "2023-10-25",
+            "hours": 0.33,
+            "client": "KRISHNAHAWK",
+            "project": "Billing Portal",
+            "description": "Finish Stripe webhooks for Billing Portal"
+        },
+        {
+            "date": "2023-10-25",
+            "hours": 4,
+            "client": null,
+            "project": "Billing Portal",
+            "description": "Continuing Billing Portal dash"
+        },
+        {
+            "date": "2023-10-25",
+            "hours": 0.25,
+            "client": null,
+            "project": null,
+            "description": "Course and soup learning break with Laracasts"
+        },
+        {
+            "date": "2023-10-25",
+            "hours": 0.25,
+            "client": null,
+            "project": null,
+            "description": "MeTime"
+        },
+        {
+            "date": "2023-10-25",
+            "hours": 1.25,
+            "client": "KRISHNAHAWK",
+            "project": "Billing Portal",
+            "description": "Adjusting Billing Portal to prevent subscriptions being created in DB until payment is successful"
+        },
+        {
+            "date": "2023-10-25",
+            "hours": 0.58,
+            "client": null,
+            "project": null,
+            "description": "Bath"
+        },
+        {
+            "date": "2023-10-25",
+            "hours": 0.17,
+            "client": null,
+            "project": null,
+            "description": "Smoothie"
+        },
+        {
+            "date": "2023-10-25",
+            "hours": 0.5,
+            "client": null,
+            "project": null,
+            "description": "Researching age 33"
+        },
+        {
+            "date": "2023-10-25",
+            "hours": 1.33,
+            "client": "KRISHNAHAWK",
+            "project": "Billing Portal",
+            "description": "Continuing Billing Portal dash"
+        },
+        {
+            "date": "2023-10-25",
+            "hours": 0.17,
+            "client": "Prodigies",
+            "project": "P7",
+            "description": "P7 #SheetMusicTool fix"
+        },
+        {
+            "date": "2023-10-31",
+            "hours": 0.42,
+            "client": null,
+            "project": null,
+            "description": "Time blocking"
+        },
+        {
+            "date": "2023-10-31",
+            "hours": 0.08,
+            "client": null,
+            "project": null,
+            "description": "Checking if my voicemail still works"
+        },
+        {
+            "date": "2023-10-31",
+            "hours": 0.17,
+            "client": null,
+            "project": null,
+            "description": "Bathroom break"
+        },
+        {
+            "date": "2023-10-31",
+            "hours": 0.17,
+            "client": "KRISHNAHAWK",
+            "project": null,
+            "description": "Looking into alternative hosting for Siteground migration"
+        },
+        {
+            "date": "2023-10-31",
+            "hours": 0.17,
+            "client": "Holographic Goddess",
+            "project": null,
+            "description": "Dev site core and plugin updates"
+        },
+        {
+            "date": "2023-10-31",
+            "hours": 0.17,
+            "client": "Holographic Goddess",
+            "project": null,
+            "description": "Postmark signup and integration"
+        },
+        {
+            "date": "2023-10-31",
+            "hours": 0.58,
+            "client": "Holographic Goddess",
+            "project": null,
+            "description": "Website shell update (darken background, header replacement, navigation bar more like previous, sidebar?)"
+        },
+        {
+            "date": "2023-10-31",
+            "hours": 0.17,
+            "client": "Ariel Spilsbury",
+            "project": "Holographic Goddess",
+            "description": "Holographic Goddess header fix for"
+        },
+        {
+            "date": "2023-10-31",
+            "hours": 0.17,
+            "client": null,
+            "project": null,
+            "description": "Peanut butter crackers for Phoenix"
+        },
+        {
+            "date": "2023-10-31",
+            "hours": 0.25,
+            "client": null,
+            "project": null,
+            "description": "Yoga"
+        },
+        {
+            "date": "2023-10-31",
+            "hours": 0.58,
+            "client": null,
+            "project": null,
+            "description": "Making Phoenix's lunch"
+        },
+        {
+            "date": "2023-10-31",
+            "hours": 0.25,
+            "client": null,
+            "project": null,
+            "description": "Looking at Pokemon with Phoenix"
+        },
+        {
+            "date": "2023-10-31",
+            "hours": 0.5,
+            "client": null,
+            "project": "Inbox Zero",
+            "description": "Inbox Zero"
+        },
+        {
+            "date": "2023-10-31",
+            "hours": 1.33,
+            "client": "Holographic Goddess",
+            "project": null,
+            "description": "Site shell continued"
+        },
+        {
+            "date": "2023-10-31",
+            "hours": 1.5,
+            "client": "Holographic Goddess",
+            "project": null,
+            "description": "Homepage (donate module, newsletter module, products module, blog module, featured movie, Sanctuary module)"
+        },
+        {
+            "date": "2023-10-31",
+            "hours": 1.17,
+            "client": "Holographic Goddess",
+            "project": null,
+            "description": "PayPal buy button on Oracle, book singles, sessions, etc."
+        },
+        {
+            "date": "2023-10-31",
+            "hours": 0.33,
+            "client": null,
+            "project": null,
+            "description": "Making Spinach Soup and Smoothie"
+        },
+        {
+            "date": "2023-10-31",
+            "hours": 0.33,
+            "client": "Holographic Goddess",
+            "project": null,
+            "description": "Website deboxing"
+        },
+        {
+            "date": "2023-10-31",
+            "hours": 1.83,
+            "client": "Holographic Goddess",
+            "project": null,
+            "description": "Zoom meeting with Ariel"
+        },
+        {
+            "date": "2023-10-31",
+            "hours": 0.17,
+            "client": "Holographic Goddess",
+            "project": null,
+            "description": "Meeting followup notes"
+        },
+        {
+            "date": "2023-10-31",
+            "hours": 0.17,
+            "client": null,
+            "project": null,
+            "description": "Visiting with Lisa"
+        },
+        {
+            "date": "2023-10-31",
+            "hours": 0.17,
+            "client": "Sanctuary Of The Open Heart",
+            "project": "Winter Solstice 2023",
+            "description": "Downloading Peter Gabriel songs to edit together for Winter Solstice 2023"
+        },
+        {
+            "date": "2023-10-31",
+            "hours": 1.67,
+            "client": "Prodigies",
+            "project": "P7",
+            "description": "Shopify custom API call for lifetime stock into WP P7"
+        },
+        {
+            "date": "2023-11-01",
+            "hours": 0.17,
+            "client": null,
+            "project": null,
+            "description": "Time blocking"
+        },
+        {
+            "date": "2023-11-01",
+            "hours": 0.08,
+            "client": null,
+            "project": null,
+            "description": "NaNoWriMo project creation"
+        },
+        {
+            "date": "2023-11-01",
+            "hours": 3.67,
+            "client": "Sanctuary Of The Open Heart",
+            "project": null,
+            "description": "Finish new membership purchase signup flow"
+        },
+        {
+            "date": "2023-11-01",
+            "hours": 0.25,
+            "client": "Sanctuary Of The Open Heart",
+            "project": null,
+            "description": "Meeting prep"
+        },
+        {
+            "date": "2023-11-01",
+            "hours": 1.3,
+            "client": "Sanctuary Of The Open Heart",
+            "project": null,
+            "description": "Meeting with Argon via Zoom"
+        },
+        {
+            "date": "2023-11-01",
+            "hours": 0.08,
+            "client": null,
+            "project": null,
+            "description": "Grab laundry"
+        },
+        {
+            "date": "2023-11-01",
+            "hours": 0.17,
+            "client": null,
+            "project": null,
+            "description": "NaNoWriMo prep (krishnahawk.com? blogging? ADHD course?)"
+        },
+        {
+            "date": "2023-11-01",
+            "hours": 0.08,
+            "client": null,
+            "project": null,
+            "description": "Taking trash out"
+        },
+        {
+            "date": "2023-11-01",
+            "hours": 0.17,
+            "client": "Sanctuary Of The Open Heart",
+            "project": "Winter Solstice 2023",
+            "description": "Edit Peter Gabriel songs for Winter Solstice 2023"
+        },
+        {
+            "date": "2023-11-01",
+            "hours": 0.08,
+            "client": null,
+            "project": null,
+            "description": "Seeing Phoenix's warewolf costume"
+        },
+        {
+            "date": "2023-11-01",
+            "hours": 0.33,
+            "client": null,
+            "project": null,
+            "description": "Massaging Aly"
+        },
+        {
+            "date": "2023-11-01",
+            "hours": 0.67,
+            "client": "Sanctuary Of The Open Heart",
+            "project": "Winter Solstice 2023",
+            "description": "Edit Peter Gabriel songs for Winter Solstice 2023 continued"
+        },
+        {
+            "date": "2023-11-01",
+            "hours": 0.5,
+            "client": null,
+            "project": null,
+            "description": "Making spinach soup and smoothie"
+        },
+        {
+            "date": "2023-11-01",
+            "hours": 1.92,
+            "client": "Prodigies",
+            "project": null,
+            "description": "Uscreen redirects issue"
+        },
+        {
+            "date": "2023-11-01",
+            "hours": 0.17,
+            "client": "Sanctuary Of The Open Heart",
+            "project": "Winter Solstice 2023",
+            "description": "Send Ariel edited audio files for Winter Solstice 2023"
+        },
+        {
+            "date": "2023-11-01",
+            "hours": 0.5,
+            "client": null,
+            "project": null,
+            "description": "Cleaning dash"
+        },
+        {
+            "date": "2023-11-01",
+            "hours": 0.25,
+            "client": "Sanctuary Of The Open Heart",
+            "project": null,
+            "description": "Convert membership report doc to spreadsheet and send to Argon"
+        },
+        {
+            "date": "2023-11-01",
+            "hours": 0.08,
+            "client": "Sanctuary Of The Open Heart",
+            "project": null,
+            "description": "Refunding PayPal tests"
+        },
+        {
+            "date": "2023-11-01",
+            "hours": 1.42,
+            "client": "Prodigies",
+            "project": "P7",
+            "description": "Add product ID capability to stock levels shortcode in P7"
+        },
+        {
+            "date": "2023-11-01",
+            "hours": 0.17,
+            "client": null,
+            "project": null,
+            "description": "Shower"
+        },
+        {
+            "date": "2023-11-01",
+            "hours": 0.33,
+            "client": null,
+            "project": null,
+            "description": "Heating up curry"
+        },
+        {
+            "date": "2023-11-01",
+            "hours": 0.5,
+            "client": "KRISHNAHAWK",
+            "project": "Timeblox",
+            "description": "Set up JSON conversion for Timeblox sheets"
+        },
+        {
+            "date": "2023-11-01",
+            "hours": 0.5,
+            "client": "KRISHNAHAWK",
+            "project": "Timeblox",
+            "description": "Set up JSON to timesheet conversion for Timeblox"
+        },
+        {
+            "date": "2023-10-23",
+            "hours": 0.17,
+            "client": null,
+            "project": "Inbox Zero",
+            "description": "Inbox Zero"
+        },
+        {
+            "date": "2023-10-23",
+            "hours": 0.67,
+            "client": "Sanctuary Of The Open Heart",
+            "project": null,
+            "description": "Fix Stripe subscription cancellation on frontend of website"
+        },
+        {
+            "date": "2023-10-23",
+            "hours": 0.33,
+            "client": null,
+            "project": null,
+            "description": "Looking into cancelling voicemail inbox"
+        },
+        {
+            "date": "2023-10-23",
+            "hours": 0.17,
+            "client": null,
+            "project": null,
+            "description": "Making Peanut Butter Crackers"
+        },
+        {
+            "date": "2023-10-23",
+            "hours": 0.83,
+            "client": "Sanctuary Of The Open Heart",
+            "project": null,
+            "description": "Finishing stripe cancellation fix on website"
+        },
+        {
+            "date": "2023-10-23",
+            "hours": 0.42,
+            "client": "Sanctuary Of The Open Heart",
+            "project": null,
+            "description": "New member email and admin notification manual send"
+        },
+        {
+            "date": "2023-10-23",
+            "hours": 0.08,
+            "client": null,
+            "project": null,
+            "description": "Laundry"
+        },
+        {
+            "date": "2023-10-23",
+            "hours": 0.17,
+            "client": null,
+            "project": null,
+            "description": "Time blocking"
+        },
+        {
+            "date": "2023-10-23",
+            "hours": 0.25,
+            "client": "Sanctuary Of The Open Heart",
+            "project": null,
+            "description": "Redirect manage membership page to login"
+        },
+        {
+            "date": "2023-10-23",
+            "hours": 4,
+            "client": "KRISHNAHAWK",
+            "project": "Billing Portal",
+            "description": "Billing Portal dash"
+        },
+        {
+            "date": "2023-10-10",
+            "hours": 0.22,
+            "client": null,
+            "project": null,
+            "description": "Time blocking"
+        },
+        {
+            "date": "2023-10-10",
+            "hours": 0.17,
+            "client": null,
+            "project": null,
+            "description": "Email processing"
+        },
+        {
+            "date": "2023-10-10",
+            "hours": 0.08,
+            "client": null,
+            "project": null,
+            "description": "Email replying"
+        },
+        {
+            "date": "2023-10-10",
+            "hours": 0.08,
+            "client": null,
+            "project": null,
+            "description": "Chai for Aly"
+        },
+        {
+            "date": "2023-10-10",
+            "hours": 0.17,
+            "client": null,
+            "project": null,
+            "description": "Asking Rob if he can watch Phoenix for Sunday class"
+        },
+        {
+            "date": "2023-10-10",
+            "hours": 2,
+            "client": "Heather Reynolds",
+            "project": "Mermaid Tales Press",
+            "description": "Mermaid Tales Press website page shell"
+        },
+        {
+            "date": "2023-10-10",
+            "hours": 5,
+            "client": "Heather Reynolds",
+            "project": "Mermaid Tales Press",
+            "description": "Mermaid Tales Press website homepage with 3 buttons (HTGW, ADND, \"Additional Publications\")"
+        },
+        {
+            "date": "2023-10-10",
+            "hours": 0.75,
+            "client": null,
+            "project": null,
+            "description": "Bath"
+        },
+        {
+            "date": "2023-10-10",
+            "hours": 0.58,
+            "client": "Heather Reynolds",
+            "project": "Mermaid Tales Press",
+            "description": "Add poem as post Mermaid Tales Press"
+        },
+        {
+            "date": "2023-10-10",
+            "hours": 0.83,
+            "client": "Heather Reynolds",
+            "project": "Mermaid Tales Press",
+            "description": "Mermaid Tales Press website single post shell"
+        },
+        {
+            "date": "2023-10-10",
+            "hours": 0.92,
+            "client": "Heather Reynolds",
+            "project": "Mermaid Tales Press",
+            "description": "Mermaid Tales Press website mobile layout adjustments"
+        },
+        {
+            "date": "2023-10-10",
+            "hours": 0.08,
+            "client": null,
+            "project": null,
+            "description": "Grabbing cardboard from the car"
+        },
+        {
+            "date": "2023-10-10",
+            "hours": 0.08,
+            "client": null,
+            "project": null,
+            "description": "laundry"
+        },
+        {
+            "date": "2023-10-10",
+            "hours": 0.17,
+            "client": "Heather Reynolds",
+            "project": "Mermaid Tales Press",
+            "description": "Install Clarity and Fathom tracking codes on Mermaid Tales Press website"
+        },
+        {
+            "date": "2023-10-10",
+            "hours": 0.33,
+            "client": "Ariel Spilsbury",
+            "project": "Holographic Goddess",
+            "description": "Holographic Goddess manual order creation for customer Allesandra"
+        },
+        {
+            "date": "2023-10-10",
+            "hours": 0.17,
+            "client": "Ariel Spilsbury",
+            "project": "Holographic Goddess",
+            "description": "Sending Allesandra her Holographic Goddess course link and offering any additional support needed"
+        },
+        {
+            "date": "2023-10-10",
+            "hours": 0.08,
+            "client": null,
+            "project": "Email",
+            "description": "Processing and replying to Email"
+        },
+        {
+            "date": "2023-10-10",
+            "hours": 0.5,
+            "client": "KRISHNAHAWK",
+            "project": "Billing Portal",
+            "description": "Continue mockups for generic Billing Portal app"
+        },
+        {
+            "date": "2023-10-10",
+            "hours": 0.08,
+            "client": null,
+            "project": null,
+            "description": "Brushing teeth with Phoenix"
+        },
+        {
+            "date": "2023-10-10",
+            "hours": 0.08,
+            "client": null,
+            "project": null,
+            "description": "laundry"
+        },
+        {
+            "date": "2023-10-10",
+            "hours": 0.08,
+            "client": null,
+            "project": null,
+            "description": "Grabbing backup stove from downstairs closet"
+        },
+        {
+            "date": "2023-10-10",
+            "hours": 0.33,
+            "client": null,
+            "project": null,
+            "description": "Making myself Dinner"
+        },
+        {
+            "date": "2023-10-10",
+            "hours": 0.67,
+            "client": "KRISHNAHAWK",
+            "project": "Billing Portal",
+            "description": "Finishing mockups for generic Billing Portal app"
+        },
+        {
+            "date": "2023-10-10",
+            "hours": 0.75,
+            "client": "KRISHNAHAWK",
+            "project": "Billing Portal",
+            "description": "Brainstorm functions needed for generic Billing Portal app"
+        },
+        {
+            "date": "2023-10-18",
+            "hours": 1,
+            "client": "KRISHNAHAWK",
+            "project": "Billing Portal",
+            "description": "Billing Portal subscribe dash"
+        },
+        {
+            "date": "2023-10-18",
+            "hours": 1,
+            "client": "KRISHNAHAWK",
+            "project": "Billing Portal",
+            "description": "Billing Portal stripe API dash: subscription cancel and change"
+        },
+        {
+            "date": "2023-10-18",
+            "hours": 1,
+            "client": "KRISHNAHAWK",
+            "project": "Billing Portal",
+            "description": "Billing Portal stripe API dash: payment method update"
+        },
+        {
+            "date": "2023-10-18",
+            "hours": 0.33,
+            "client": null,
+            "project": null,
+            "description": "Lifting"
+        },
+        {
+            "date": "2023-10-24",
+            "hours": 0.25,
+            "client": "Prodigies",
+            "project": "P7",
+            "description": "Slack checkin P7"
+        },
+        {
+            "date": "2023-10-24",
+            "hours": 0.08,
+            "client": null,
+            "project": null,
+            "description": "Bathroom"
+        },
+        {
+            "date": "2023-10-24",
+            "hours": 0.5,
+            "client": "KRISHNAHAWK",
+            "project": "Billing Portal",
+            "description": "Billing Portal regroup"
+        },
+        {
+            "date": "2023-10-24",
+            "hours": 0.25,
+            "client": null,
+            "project": null,
+            "description": "Working on filling up voicemail"
+        },
+        {
+            "date": "2023-10-24",
+            "hours": 0.17,
+            "client": "Prodigies",
+            "project": "P7",
+            "description": "Setting up redirect for P7"
+        },
+        {
+            "date": "2023-10-24",
+            "hours": 0.67,
+            "client": "Sanctuary Of The Open Heart",
+            "project": null,
+            "description": "Answering email"
+        },
+        {
+            "date": "2023-10-24",
+            "hours": 0.17,
+            "client": null,
+            "project": null,
+            "description": "General email"
+        },
+        {
+            "date": "2023-10-24",
+            "hours": 0.5,
+            "client": "Sanctuary Of The Open Heart",
+            "project": null,
+            "description": "Support email"
+        },
+        {
+            "date": "2023-10-24",
+            "hours": 0.75,
+            "client": null,
+            "project": "Inbox Zero",
+            "description": "Inbox Zero and replying to email"
+        },
+        {
+            "date": "2023-10-24",
+            "hours": 0.42,
+            "client": "Sanctuary Of The Open Heart",
+            "project": null,
+            "description": "Handling Argon's test subscription cancellation and refunds"
+        },
+        {
+            "date": "2023-10-24",
+            "hours": 0.5,
+            "client": "Prodigies",
+            "project": "Sheet Music Tool",
+            "description": "ACF field additions for Sheet Music Tool"
+        },
+        {
+            "date": "2023-10-24",
+            "hours": 2.25,
+            "client": "Prodigies",
+            "project": "Sheet Music Tool",
+            "description": "Sheet Music Tool grid changes"
+        },
+        {
+            "date": "2023-10-24",
+            "hours": 0.33,
+            "client": "Prodigies",
+            "project": "Sheet Music Tool",
+            "description": "Updating Rob on changes to Sheet Music Tool"
+        },
+        {
+            "date": "2023-10-24",
+            "hours": 0.5,
+            "client": null,
+            "project": null,
+            "description": "Bath"
+        },
+        {
+            "date": "2023-10-24",
+            "hours": 0.33,
+            "client": null,
+            "project": null,
+            "description": "Heating up soup, making tea"
+        },
+        {
+            "date": "2023-10-06",
+            "hours": 0.58,
+            "client": null,
+            "project": null,
+            "description": "Email responding"
+        },
+        {
+            "date": "2023-10-06",
+            "hours": 0.33,
+            "client": "Prodigies",
+            "project": "P7",
+            "description": "P7 slack responses with Michael about auth concerns, reenabling security measures to prevent wp-admin viewing for non-admins"
+        },
+        {
+            "date": "2023-10-06",
+            "hours": 0.08,
+            "client": null,
+            "project": null,
+            "description": "Laundry"
+        },
+        {
+            "date": "2023-10-06",
+            "hours": 1,
+            "client": "Prodigies",
+            "project": "P7",
+            "description": "P7 sheet music grid permissions and global options pages"
+        },
+        {
+            "date": "2023-10-06",
+            "hours": 0.08,
+            "client": null,
+            "project": null,
+            "description": "Laundry"
+        },
+        {
+            "date": "2023-10-06",
+            "hours": 1,
+            "client": "Prodigies",
+            "project": "P7",
+            "description": "Finishing P7 sheet music grid permissions and global options pages"
+        },
+        {
+            "date": "2023-10-06",
+            "hours": 0.08,
+            "client": null,
+            "project": null,
+            "description": "Laundry"
+        },
+        {
+            "date": "2023-10-06",
+            "hours": 0.17,
+            "client": null,
+            "project": null,
+            "description": "Make shave ice"
+        },
+        {
+            "date": "2023-10-06",
+            "hours": 1,
+            "client": null,
+            "project": null,
+            "description": "Play videogames with Phoenix"
+        },
+        {
+            "date": "2023-10-06",
+            "hours": 0.17,
+            "client": null,
+            "project": null,
+            "description": "Making smoothie"
+        },
+        {
+            "date": "2023-10-06",
+            "hours": 1.5,
+            "client": "KRISHNAHAWK",
+            "project": "Timeblox",
+            "description": "Timeblox improvements"
+        },
+        {
+            "date": "2023-10-06",
+            "hours": 0.17,
+            "client": null,
+            "project": null,
+            "description": "Email check"
+        },
+        {
+            "date": "2023-10-06",
+            "hours": 0.67,
+            "client": "Prodigies",
+            "project": "P7",
+            "description": "Finishing P7 sheet music grid permissions and global options pages"
+        },
+        {
+            "date": "2023-10-06",
+            "hours": 0.08,
+            "client": "KRISHNAHAWK",
+            "project": "Aligned Business Sponsorship",
+            "description": "Review Clarity for Aligned Business Sponsorship form"
+        },
+        {
+            "date": "2023-10-06",
+            "hours": 0.25,
+            "client": "Sanctuary Of The Open Heart",
+            "project": "Aligned Business Sponsorship",
+            "description": "Aligned Business Sponsorship ABS sponsor form required form removal"
+        },
+        {
+            "date": "2023-10-06",
+            "hours": 0.25,
+            "client": "Sanctuary Of The Open Heart",
+            "project": "Winter Solstice 2023",
+            "description": "Prep for call with Ariel about Winter Solstice 2023 lighting"
+        },
+        {
+            "date": "2023-10-06",
+            "hours": 0.5,
+            "client": "Sanctuary Of The Open Heart",
+            "project": "Winter Solstice 2023",
+            "description": "Call with Ariel to go over Winter Solstice 2023 lighting"
+        },
+        {
+            "date": "2023-10-06",
+            "hours": 0.25,
+            "client": "Sanctuary Of The Open Heart",
+            "project": "Winter Solstice 2023",
+            "description": "Notes after call with Ariel about Winter Solstice 2023"
+        },
+        {
+            "date": "2023-10-06",
+            "hours": 0.25,
+            "client": "Sanctuary Of The Open Heart",
+            "project": "Aligned Business Sponsorship",
+            "description": "Aligned Business Sponsorship sponsor form required fields removal"
+        }
+    ]
+}
