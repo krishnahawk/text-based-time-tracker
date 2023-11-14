@@ -261,7 +261,38 @@ function updateCurrentTimeRemaining() {
     }
 }
 
+function loadScrollToCurrentSetting() {
+    // Check to see if there is a browser storage value for scroll_to_current
+    const scroll_to_current = localStorage.getItem('scroll_to_current');
+    // If there is no value, set it to true
+    if (!scroll_to_current) {
+        localStorage.setItem('scroll_to_current', 'true');
+    }
+}
+
+function toggleScrollToCurrentSetting(mode = null) {
+    // Check to see if there is a browser storage value for scroll_to_current
+    const scroll_to_current = localStorage.getItem('scroll_to_current');
+    // If mode is null, toggle the value
+    if (mode === null) {
+        localStorage.setItem('scroll_to_current', scroll_to_current === 'true' ? 'false' : 'true');
+    } else {
+        localStorage.setItem('scroll_to_current', mode);
+    }
+}
+
+// Add keyboard listener for 's' key
+document.addEventListener('keydown', function (event) {
+    if (event.key === 's') {
+        toggleScrollToCurrentSetting();
+    }
+});
+
 function scrollToCurrent() {
+    const scroll_to_current = localStorage.getItem('scroll_to_current');
+    if (scroll_to_current === 'false') {
+        return;
+    }
     const currentBlock = document.querySelector('.current');
     if (currentBlock) {
         currentBlock.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -279,3 +310,4 @@ function fetchAndUpdate() {
 }
 
 fetchAndUpdate(); // initial call
+loadScrollToCurrentSetting(); // initial call
