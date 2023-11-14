@@ -18,7 +18,9 @@ body {
 .strikeout {
     text-decoration: line-through;
 }
-
+.past {
+    opacity: 0.5;
+}
 div#time_remaining_container {
     position: fixed;
     top: 0;

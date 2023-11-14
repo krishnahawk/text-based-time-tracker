@@ -138,9 +138,12 @@ function parseAndDisplay(data) {
         now.setMilliseconds(0);
 
         const isAfterStartTime = now.getTime() >= baseTime.getTime();
+        const isAfterEndTime = now.getTime() >= updatedTime.getTime();
         const isBeforeEndTime = now.getTime() <= updatedTime.getTime();
         const isBeforeEndTimeMinusOneMinute = now.getTime() <= (updatedTime.getTime() - 60000);
-        if (isAfterStartTime && isBeforeEndTimeMinusOneMinute) {
+        if (isAfterEndTime) {
+            timeblockDiv.classList.add('past');
+        } else if (isAfterStartTime && isBeforeEndTimeMinusOneMinute) {
             timeblockDiv.classList.add('current');
             // Add start time to the data-start-time attribute
             timeblockDiv.setAttribute('data-start-time', baseTime.getTime());
