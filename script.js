@@ -104,7 +104,15 @@ function parseAndDisplay(data) {
             continue;
         }
 
-        const [duration, description] = lines[i].split(' - ');
+
+        const [duration, rawDescription] = lines[i].split(' - ');
+        let description = rawDescription;
+
+        // Check if description starts with an asterisk and update accordingly
+        if (description.trim().startsWith('*')) {
+            description = description.trim().substring(1).trim(); // Remove the asterisk and any extra space
+            description = `<span class="strikeout">${description}</span>`; // Wrap in strikeout span
+        }
 
         const value = parseInt(duration);
 
