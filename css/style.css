@@ -32,6 +32,36 @@ div#time_remaining_container {
     align-items: center;
 }
 
+div#time_planned {
+    position: fixed;
+    top: auto;
+    bottom: 2rem;
+    right: 0;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    opacity: 0.5;
+    transition: all 1s ease-in-out;
+}
+
+div#end_of_workday {
+    position: fixed;
+    top: auto;
+    bottom: 10px;
+    right: 0;
+    left: auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    opacity: 0.5;
+    transition: all 1s ease-in-out;
+}
+
+div#time_planned:hover {
+    opacity: 1;
+}
 div#time_remaining_container div#time_remaining {
     font-size: 2rem;
     color: #23D6AA;
@@ -52,6 +82,26 @@ div#time_remaining_container #time_remaining.less_than_one_minute {
     color: #CF2260;
 }
 
+div#habits {
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    transition: opacity 1s ease-in-out;
+}
+
+div#habits div.habit {
+    filter: saturate(0) brightness(0.4);
+}
+
+div#habits div.habit.done {
+    filter: unset;
+}
 #timeline {
     display: flex;
     flex-direction: column;

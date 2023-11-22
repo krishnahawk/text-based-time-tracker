@@ -4,10 +4,6 @@
 const now = new Date();
 now.setHours(0, 0, 0, 0);
 
-
-// const now = new Date("Wed Oct 04 2023 20:20:00 GMT-1000");
-// const filePath = 'timeblock.txt'; // Replace with your local file path
-// today's date in iso format
 const today = now.toISOString().split('T')[0];
 const filePath = 'blox/' + today + '.blox'; // Replace with your local file path
 const exampleFilePath = 'blox/YYYY-MM-DD.blox';
@@ -33,6 +29,8 @@ function fetchFile() {
 
 function parseAndDisplay(data) {
     const lines = data.split('\n');
+    const habits = [];
+    let totalTimePlanned = 0;
     // If line is empty, remove it
     for (let i = 0; i < lines.length; i++) {
         if (lines[i].trim() === '') {
@@ -77,6 +75,18 @@ function parseAndDisplay(data) {
     for (let i = 1; i < lines.length; i++) {
 
         const line = lines[i].trim();
+
+        // Check if the line starts with a percentage symbol
+        if (line.startsWith('%')) {
+            // Extract habit text and check for asterisk
+            const habitText = line.substring(1).trim();
+            const isDone = habitText.startsWith('*');
+            const habit = isDone ? habitText.substring(1).trim() : habitText;
+
+            // Add the habit to the habits array
+            habits.push({ text: habit, isDone });
+            continue; // Skip further processing for this line
+        }
 
         // Check if the line is a new start time
         const newTimeMatch = line.match(/(\d+)(?::(\d+))?(am|pm)/i);
@@ -154,6 +164,17 @@ function parseAndDisplay(data) {
         // Calculate total duration of the block in milliseconds
         const totalDurationMillis = updatedTimeMillis - baseTime.getTime();
 
+        // Add the total duration to the total time planned
+        totalTimePlanned += totalDurationMillis;
+
+        // Determine whether this is the final block of the day
+        const isFinalBlock = i === lines.length - 1;
+
+        // If this is the final block, update the end_of_workday variable
+        if (isFinalBlock) {
+            endOfWorkday = updatedTime;
+        }
+
         // Calculate percentage of the block that has passed
         const percentagePassed = (now.getTime() - baseTime.getTime()) / totalDurationMillis;
 
@@ -190,8 +211,67 @@ function parseAndDisplay(data) {
     const fontSize = 19 * (timelineHeight / 800);
     timelineDiv.style.fontSize = `${fontSize}px`;
 
+    displayHabits(habits);
+    displayTotalTimePlanned(totalTimePlanned);
+    displayEndOfWorkdayTime(endOfWorkday);
+    countdownToEndOfWorkday(endOfWorkday);
 }
 
+function countdownToEndOfWorkday(endOfWorkday) {
+    const now = new Date();
+    const timeRemainingMillis = endOfWorkday.getTime() - now.getTime();
+    const timeRemainingSeconds = Math.floor(timeRemainingMillis / 1000);
+    const timeRemainingMinutes = Math.floor(timeRemainingSeconds / 60);
+    const timeRemainingSecondsMinusMinutes = timeRemainingSeconds - (timeRemainingMinutes * 60);
+    const timeRemainingHours = Math.floor(timeRemainingMinutes / 60);
+    const timeRemainingMinutesMinusHours = timeRemainingMinutes - (timeRemainingHours * 60);
+    const timeRemainingDays = Math.floor(timeRemainingHours / 24);
+    const timeRemainingHoursMinusDays = timeRemainingHours - (timeRemainingDays * 24);
+    const timeRemainingDiv = document.getElementById('workday_remaining');
+    const workdayRemainingDisplayString = '';
+    if (timeRemainingDays > 0) {
+        timeRemainingDiv.innerHTML = `${timeRemainingDays}d ${timeRemainingHoursMinusDays}h ${timeRemainingMinutesMinusHours}m`;
+    }
+    if (timeRemainingDays === 0 && timeRemainingHours > 0) {
+        timeRemainingDiv.innerHTML = `${timeRemainingHours}h ${timeRemainingMinutesMinusHours}m`;
+    }
+    if (timeRemainingDays === 0 && timeRemainingHours === 0) {
+        timeRemainingDiv.innerHTML = `${timeRemainingMinutes}m`;
+    }
+    if (timeRemainingDays === 0 && timeRemainingHours === 0 && timeRemainingMinutes === 0) {
+        timeRemainingDiv.innerHTML = `${timeRemainingSeconds}s`;
+    }
+    if (timeRemainingMillis < 0) {
+        timeRemainingDiv.innerHTML = '0h 0m';
+    }
+}
+
+function displayTotalTimePlanned(totalTimePlanned) {
+    const totalTimePlannedDiv = document.getElementById('total_time_planned');
+    const totalTimePlannedHours = Math.floor(totalTimePlanned / 1000 / 60 / 60);
+    const totalTimePlannedMinutes = Math.floor(totalTimePlanned / 1000 / 60) - (totalTimePlannedHours * 60);
+    totalTimePlannedDiv.innerHTML = `${totalTimePlannedHours}h ${totalTimePlannedMinutes}m`;
+}
+
+function displayEndOfWorkdayTime(endOfWorkday) {
+    const endOfWorkdayDiv = document.getElementById('end_of_workday_time');
+    endOfWorkdayDiv.innerHTML = formatTime(endOfWorkday);
+}
+
+function displayHabits(habits) {
+    const habitsDiv = document.getElementById('habits');
+    habitsDiv.innerHTML = ''; // Clear previous habits
+
+    habits.forEach(habit => {
+        const habitDiv = document.createElement('div');
+        habitDiv.className = 'habit';
+        if (habit.isDone) {
+            habitDiv.classList.add('done');
+        }
+        habitDiv.innerText = habit.text;
+        habitsDiv.appendChild(habitDiv);
+    });
+}
 
 function formatTime(date) {
     let hours = date.getHours();
