@@ -1,5 +1,8 @@
 <?php
 
+// Set timezone to california
+date_default_timezone_set('America/Los_Angeles');
+
 function camelCaseToWords($input) {
     // If the string is all uppercase, do nothing
     if (strtoupper($input) === $input) {
@@ -24,20 +27,25 @@ function removeClientsFromDescription($input) {
 }
 
 
-$directoryPath = 'invoiceblox'; // Replace with your actual "blox" folder path
-$outputPath = 'time_log2.json'; // Replace with your actual output folder path
+$directoryPath = 'blox';
 
-$entries = [];
+// Read file with today's date
+$today_iso_date = date('Y-m-d');
+$date = $today_iso_date;
+$today_file = $directoryPath . '/' . $today_iso_date . '.blox';
+if (file_exists($today_file)) {
+    $lines = file($today_file);
 
-// Read files from directory
-$files = new DirectoryIterator($directoryPath);
-foreach ($files as $file) {
-    if ($file->isDot() || $file->getExtension() !== 'blox' || $file->getFilename() === 'YYYY-MM-DD.blox' || $file->getFilename() === 'tomorrow.blox') {
-        continue;
-    }
+    // First line should have a time formatted as either 8am or 8:00am and is always to be used as the start time
+    $start_time = trim($lines[0]);
+    $start_time = str_replace(':', '', $start_time);
+    $start_time = str_replace('am', '', $start_time);
+    $start_time = str_replace('pm', '', $start_time);
+    $start_time = str_replace(' ', '', $start_time);
+    $start_time = str_pad($start_time, 4, '0', STR_PAD_LEFT);
+    $start_time = substr($start_time, 0, 2) . ':' . substr($start_time, 2, 2);
 
-    $date = substr($file->getFilename(), 0, 10); // Extract the date from the filename
-    $lines = file($file->getPathname());
+    $entries = [];
 
     foreach ($lines as $line) {
         if (preg_match('/^(\d+)([mh]?) - (.+)$/', trim($line), $matches)) {
@@ -47,6 +55,10 @@ foreach ($files as $file) {
                 $duration *= 60; // Convert hours to minutes
             }
             $hours = round($duration / 60, 2);
+
+            // For each line, use the start time from the first line and increment by the duration
+            $start = $start_time;
+            $end = date('H:i', strtotime($start_time . ' + ' . $duration . ' minutes'));
 
             // Remove brackets from description
             $description = str_replace(['[', ']'], '', $matches[3]);
@@ -70,28 +82,30 @@ foreach ($files as $file) {
             // Prepare the entry
             $entry = [
                 'date' => $date,
+                'start' => $start,
+                'end' => $end,
                 'hours' => $hours,
                 'client' => $client,
                 'project' => $project,
                 'description' => $description,
             ];
 
+            $start_time = $end;
+
             $entries[] = $entry;
+
         }
     }
-}
 
-if (isset($_GET['output']) && ($_GET['output'] == 'file')) {
-    // Write the JSON output
-    file_put_contents($outputPath, json_encode(['entries' => $entries], JSON_PRETTY_PRINT));
-}
+    // Go through each entry and determine which ones end after the current time
+    $current_time = date('H:i');
+    $current_entries = [];
+    foreach ($entries as $entry) {
+        if ($entry['end'] > $current_time) {
+            $current_entries[] = $entry;
+        }
+    }
 
-if (isset($_GET['output']) && ($_GET['output'] == 'json')) {
-    // Write the JSON output
-    echo json_encode(['entries' => $entries], JSON_PRETTY_PRINT);
-}
-
-if (!isset($_GET['output'])) {
-    // Just add the output to a variable to be included in other files
-    $json = json_encode(['entries' => $entries], JSON_PRETTY_PRINT);
+    // Return the current entries as JSON
+    echo json_encode($current_entries, JSON_PRETTY_PRINT);
 }

@@ -205,11 +205,14 @@ function parseAndDisplay(data) {
 
     }
 
-    // Get the height of the timeline div
-    const timelineHeight = timelineDiv.offsetHeight;
-    // scale font sizee based on height of timeline
-    const fontSize = 19 * (timelineHeight / 800);
-    timelineDiv.style.fontSize = `${fontSize}px`;
+    // If not on a mobile device
+    if (!navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)) {
+        // Get the height of the timeline div
+        const timelineHeight = timelineDiv.offsetHeight;
+        // scale font sizee based on height of timeline
+        const fontSize = 19 * (timelineHeight / 800);
+        timelineDiv.style.fontSize = `${fontSize}px`;
+    }
 
     displayHabits(habits);
     displayTotalTimePlanned(totalTimePlanned);
@@ -276,10 +279,14 @@ function displayHabits(habits) {
 function formatTime(date) {
     let hours = date.getHours();
     const minutes = date.getMinutes();
-    const ampm = hours >= 12 ? 'pm' : 'am';
+    let ampm = hours >= 12 ? ' pm' : ' am';
+    // // If on a device with max-width of 600px, just show a and p
+    // if (window.matchMedia('(max-width: 1000px)').matches) {
+    //     ampm = hours >= 12 ? 'p' : 'a';
+    // }
     hours = hours % 12;
     hours = hours ? hours : 12; // the hour '0' should be '12'
-    const strTime = hours + ':' + (minutes < 10 ? '0' : '') + minutes + ' ' + ampm;
+    const strTime = hours + ':' + (minutes < 10 ? '0' : '') + minutes + ampm;
     return strTime;
 }
 
@@ -391,3 +398,18 @@ function fetchAndUpdate() {
 
 fetchAndUpdate(); // initial call
 loadScrollToCurrentSetting(); // initial call
+
+/* Force full page refresh if new date */
+// Global variable to store the initial date
+let initialDate = new Date().toISOString().split('T')[0];
+
+function checkDateAndRefresh() {
+    const currentDate = new Date().toISOString().split('T')[0];
+    if (currentDate !== initialDate) {
+        // Force full page refresh
+        location.reload(true);
+    }
+}
+
+// Set an interval to check the date every minute (60000 milliseconds)
+setInterval(checkDateAndRefresh, 60000);

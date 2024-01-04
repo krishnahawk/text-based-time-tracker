@@ -1,9 +1,9 @@
 <?php
 
 // The JSON file path
-$jsonFilePath = 'time_log.json';
+$jsonFilePath = 'time_log2.json';
 // The CSV file path
-$csvFilePath = 'time_log.csv';
+$csvFilePath = 'time_log2.csv';
 
 // Read the JSON file
 $jsonData = file_get_contents($jsonFilePath);
