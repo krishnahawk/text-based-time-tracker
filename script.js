@@ -1,12 +1,46 @@
 // TODO: When user mouses over bottom status bar, slide up status like time remaining, total time planned for the day, etc.
 // TODO: Add text editor that allows you to edit the file directly from the browser, either by clicking a mouseover nav item or by pressing "e" on the keyboard
+
 // Set time to 12:00am
 const now = new Date();
 now.setHours(0, 0, 0, 0);
 
 const today = now.toISOString().split('T')[0];
-const filePath = 'blox/' + today + '.blox'; // Replace with your local file path
-const exampleFilePath = 'blox/YYYY-MM-DD.blox';
+
+// Get query string parameters
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+
+// If the URL includes a "u" parameter
+if (urlParams.has('u')) {
+    // Get the value of the "u" parameter
+    const u = urlParams.get('u');
+    // Look to see if there is a folder with that name inside the "blox" folder. If there aren't any, return
+    fetch(`blox/${u}/`)
+        .then(response => response.text())
+        .then(data => {
+            // If there is a folder with that name, fetch the file inside it
+            fetch(`blox/${u}/${today}.blox`)
+                .then(response => response.text())
+                .then(data => {
+                    // Parse the file and display it
+                    parseAndDisplay(data);
+                }
+                );
+        }
+        ).catch(error => {
+            // If there is no folder with that name, return
+            console.log('Error fetching file:', error);
+            return;
+        }
+        );
+} else {
+    // If there is no "u" parameter, alert the user and return
+    alert('Please specify a "u" parameter in the URL');
+}
+
+// const filePath = 'blox/' + today + '.blox'; // Replace with your local file path
+// const exampleFilePath = 'blox/YYYY-MM-DD.blox';
 function fetchFile() {
     const filePathWithCacheBuster = filePath + `?cacheBuster=${new Date().getTime()}`;
     fetch(filePathWithCacheBuster)
