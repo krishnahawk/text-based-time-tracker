@@ -386,14 +386,14 @@ function scrollToCurrent() {
     }
 }
 // Call scrollToCurrent() every second
-setInterval(scrollToCurrent, 1000);
+requestAnimationFrame(scrollToCurrent, 1000);
 
 // Call updateCurrentTimeRemaining() every second
-setInterval(updateCurrentTimeRemaining, 1000);
+requestAnimationFrame(updateCurrentTimeRemaining, 1000);
 
 function fetchAndUpdate() {
     fetchFile();
-    setTimeout(fetchAndUpdate, 2000);
+    requestAnimationFrame(fetchAndUpdate, 2000);
 }
 
 fetchAndUpdate(); // initial call
@@ -412,4 +412,4 @@ function checkDateAndRefresh() {
 }
 
 // Set an interval to check the date every minute (60000 milliseconds)
-setInterval(checkDateAndRefresh, 60000);
+requestAnimationFrame(checkDateAndRefresh, 60000);
