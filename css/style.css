@@ -5,14 +5,16 @@
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 200;
+    /* background: #141414;  DARK */
     background: #120120;
+    /* Very dark purple */
     color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    /* overflow:hidden; */
     line-height: 1.5;
-    padding-top: 50vh;
 }
 
 .strikeout {
@@ -115,18 +117,9 @@ div#habits div.habit.done {
     max-width: 800px;
     height: 100vh;
     scroll-behavior: smooth;
+    padding-top: 50vh;
 }
 
-/* .timeblock {
-    TODO: Remove if following works
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    min-height: 2.5rem;
-    margin-bottom: 2rem;
-} */
 .timeblock {
     width: 100%;
     display: flex;
@@ -135,22 +128,25 @@ div#habits div.habit.done {
     justify-content: space-between;
     min-height: 2.5rem;
     margin-bottom: 2rem;
-    padding: 0.5rem;
-        /* Added common padding */
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        /* Added common font-family */
 }
 
 .timeblock .start_time {
     flex-basis: 20%;
     text-align: right;
+    padding: 0.5rem;
+        padding-right: 0.5rem;
     font-weight: 100;
     color: #909298;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .timeblock .description {
+    /* padding: 10px; */
+        border-radius: 5px;
+        /* margin: 5px 0; */
     color: #CCCFD7;
     flex-basis: 80%;
+    padding: 0.5rem;
     font-weight: 200;
 }
 
@@ -230,13 +226,9 @@ span.client {
 /* Landscape mode */
 @media screen and (max-width: 1000px) and (orientation: landscape) {
 
-    /* Additional styles to optimize mobile view */
-    body {
-        padding-top: 30vh;
-    }
-
     #timeline {
-        height: auto;
+            /* height: auto; */
+        padding-top: 30vh;
     }
 
     .logo,
@@ -256,7 +248,7 @@ span.client {
     }
 
     .timeblock {
-        display: none;
+        /* display: none; */
     }
 
     .timeblock.current {
@@ -268,7 +260,7 @@ span.client {
     }
 
     .current {
-        font-size: 2rem;
+        /* font-size: 2rem; */
     }
 
     .current .start_time {
@@ -290,139 +282,140 @@ span.client {
         display: none;
     }
 
-                                                                .current {
-                                                                    font-size: 1.7rem;
-                                                                }
+        .current {
+        /* font-size: 1.7rem; */
+        }
 
-                                                                div.current div.start_time {
-                                                                    opacity: 1;
-                                                                }
+        div.current div.start_time {
+            opacity: 1;
+        }
 
-                                                                .current .description {
-                                                                    background-color: transparent;
-                                                                }
+        .current .description {
+            background-color: transparent;
+        }
 
-                                                                div#habits {
-                                                                    flex-direction: row;
-                                                                    align-items: center;
-                                                                    justify-content: center;
-                                                                    font-size: 1.3rem;
-                                                                    column-gap: .3rem;
-                                                                }
-                                                                }
+        div#habits {
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            column-gap: .3rem;
+        }
+        }
 
-                                                                /* Portrait mode */
-                                                                @media screen and (max-width: 1000px) and (orientation: portrait) {
-                                                                    body {
-                                                                        padding-top: 30vh;
-                                                                        padding-bottom: 30vh;
-                                                                        max-width: 100vw;
-                                                                    }
+/* Portrait mode */
+@media screen and (max-width: 1000px) and (orientation: portrait) {
 
-                                                                    #timeline {
-                                                                        height: auto;
-                                                                        max-width: 90vw;
-                                                                    }
+    body {
+            padding-top: 30vh;
+            padding-bottom: 30vh;
+            max-width: 100vw;
+        }
 
-                                                                    #time_remaining_container {
-                                                                        width: 100%;
-                                                                        position: fixed;
-                                                                        top: 0;
-                                                                        bottom: auto;
-                                                                        right: 0;
-                                                                        font-size: .8rem;
-                                                                        padding: .5rem !important;
-                                                                        display: flex;
-                                                                        flex-direction: column;
-                                                                        align-items: center;
-                                                                        background: #060606;
-                                                                        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-                                                                    }
+        #timeline {
+            height: auto;
+            max-width: 90vw;
+        }
 
-                                                                    #time_remaining_container div#time_remaining {
-                                                                        font-size: 1.7rem !important;
-                                                                    }
+        #time_remaining_container {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            bottom: auto;
+            right: 0;
+            font-size: .8rem;
+            padding: .5rem !important;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #060606;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
 
-                                                                    div#time_planned {
-                                                                        position: fixed;
-                                                                        top: auto;
-                                                                        bottom: 0px;
-                                                                        right: auto;
-                                                                        left: 0;
-                                                                        padding: .5rem;
-                                                                        padding-left: 1rem;
-                                                                        padding-bottom: .7rem;
-                                                                        width: 100vw;
-                                                                        display: flex;
-                                                                        flex-direction: row;
-                                                                        justify-content: flex-start;
-                                                                        align-items: center;
-                                                                        opacity: 1;
-                                                                        width: 100%;
-                                                                        background: #060606;
-                                                                        box-shadow: rgba(0, 0, 0, 0.35) 0px -5px 15px;
-                                                                    }
+        #time_remaining_container div#time_remaining {
+            font-size: 1.7rem !important;
+        }
 
-                                                                    div#end_of_workday {
-                                                                        position: fixed;
-                                                                        top: auto;
-                                                                        bottom: 0px;
-                                                                        right: 0;
-                                                                        left: auto;
-                                                                        padding: .5rem;
-                                                                        padding-right: 1rem;
-                                                                        padding-bottom: .7rem;
-                                                                        width: 60vw;
-                                                                        text-align: right;
-                                                                        display: flex;
-                                                                        flex-direction: row;
-                                                                        align-items: center;
-                                                                        justify-content: flex-end;
-                                                                        opacity: 1;
-                                                                        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        div#time_planned {
+            position: fixed;
+            top: auto;
+            bottom: 0px;
+            right: auto;
+            left: 0;
+            padding: .5rem;
+            padding-left: 1rem;
+            padding-bottom: .7rem;
+            width: 100vw;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            opacity: 1;
+            width: 100%;
+            background: #060606;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px -5px 15px;
+        }
+
+        div#end_of_workday {
+            position: fixed;
+            top: auto;
+            bottom: 0px;
+            right: 0;
+            left: auto;
+            padding: .5rem;
+            padding-right: 1rem;
+            padding-bottom: .7rem;
+            width: 60vw;
+            text-align: right;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+            opacity: 1;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     }
 
-                                                                .logo {
-                                                                    display: none !important;
+        .logo {
+            display: none !important;
     }
 
-                                                                .current {
-                                                                    font-size: 1.7rem;
-                                                                }
+        .current {
+            font-size: 1.7rem;
+        }
 
-                                                                div.start_time {
-                                                                    width: 20vw !important;
-                                                                    max-width: 20vw !important;
-                                                                    font-size: 1rem;
-                                                                }
+        div.start_time {
+            width: 20vw !important;
+            max-width: 20vw !important;
+            font-size: 1rem;
+        }
 
-                                                                .current .start_time {
-                                                                    opacity: 1;
+        .current .start_time {
+            opacity: 1;
         display: none;
     }
 
-                                                                div.description {
+        div.description {
 
-                                                                    width: 80vw !important;
-                                                                }
+        width: 80vw !important;
+        }
 
-                                                                .current .description {
-                                                                    background-color: transparent;
-                                                                }
+        .current .description {
+            background-color: transparent;
+        }
 
-                                                                div#habits {
-                                                                    position: fixed;
-                                                                    flex-direction: row;
-                                                                    align-items: center;
-                                                                    justify-content: space-between;
-                                                                    padding: .5rem;
-                                                                    font-size: 1.3rem;
-                                                                    column-gap: .3rem;
-                                                                    width: 100vw;
-                                                                    left: 0;
-                                                                    right: 0;
-                                                                    bottom: 2rem;
-                                                                    background: #060606;
-                                                                    z-index: 50;
+        div#habits {
+            position: fixed;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: .5rem;
+            font-size: 1.3rem;
+            column-gap: .3rem;
+            width: 100vw;
+            left: 0;
+            right: 0;
+            bottom: 2rem;
+            background: #060606;
+            z-index: 50;
     }
 }

@@ -1,3 +1,6 @@
+// TODO: When user mouses over bottom status bar, slide up status like time remaining, total time planned for the day, etc.
+// TODO: Add text editor that allows you to edit the file directly from the browser, either by clicking a mouseover nav item or by pressing "e" on the keyboard
+// Set time to 12:00am
 const now = new Date();
 now.setHours(0, 0, 0, 0);
 
@@ -44,10 +47,9 @@ function parseAndDisplay(data) {
 
     const startTime = new Date();
     startTime.setHours(0, 0, 0, 0); // Set to start of the day (midnight)
-
     const [_, hour, minutesRaw, ampm] = lines[0].match(/(\d+)(?::(\d+))?(am|pm)/i);
     const minutes = minutesRaw || "0";
-
+    ;
     if (ampm.toLowerCase() === 'pm' && hour !== "12") {
         startTime.setHours(parseInt(hour) + 12);
 
@@ -147,9 +149,7 @@ function parseAndDisplay(data) {
         if (isAfterEndTime) {
             timeblockDiv.classList.add('past');
         } else if (isAfterStartTime && isBeforeEndTimeMinusOneMinute) {
-            if (!element.classList.contains('current')) {
-                element.classList.add('current');
-            }
+            timeblockDiv.classList.add('current');
             // Add start time to the data-start-time attribute
             timeblockDiv.setAttribute('data-start-time', baseTime.getTime());
             // Add end time to the data-end-time attribute
@@ -201,13 +201,13 @@ function parseAndDisplay(data) {
     }
 
     // If not on a mobile device
-    if (!navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)) {
-        // Get the height of the timeline div
-        const timelineHeight = timelineDiv.offsetHeight;
-        // scale font sizee based on height of timeline
-        const fontSize = 19 * (timelineHeight / 800);
-        timelineDiv.style.fontSize = `${fontSize}px`;
-    }
+    // if (!navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)) {
+    //     // Get the height of the timeline div
+    //     const timelineHeight = timelineDiv.offsetHeight;
+    //     // scale font sizee based on height of timeline
+    //     const fontSize = 19 * (timelineHeight / 800);
+    //     timelineDiv.style.fontSize = `${fontSize}px`;
+    // }
 
     displayHabits(habits);
     displayTotalTimePlanned(totalTimePlanned);
@@ -370,62 +370,25 @@ document.addEventListener('keydown', function (event) {
     }
 });
 
-// TODO: Remove this old version if new version works
-// function scrollToCurrent() {
-//     const scroll_to_current = localStorage.getItem('scroll_to_current');
-//     if (scroll_to_current === 'false') {
-//         return;
-//     }
-//     const currentBlock = document.querySelector('.current');
-//     if (currentBlock) {
-//         currentBlock.scrollIntoView({ behavior: 'smooth', block: 'center' });
-//     }
-// }
-
-function throttle(func, limit) {
-    let lastFunc;
-    let lastRan;
-    return function () {
-        const context = this;
-        const args = arguments;
-        if (!lastRan) {
-            func.apply(context, args);
-            lastRan = Date.now();
-        } else {
-            clearTimeout(lastFunc);
-            lastFunc = setTimeout(function () {
-                if ((Date.now() - lastRan) >= limit) {
-                    func.apply(context, args);
-                    lastRan = Date.now();
-                }
-            }, limit - (Date.now() - lastRan));
-        }
-    }
-}
-
-const throttledScrollToCurrent = throttle(scrollToCurrent, 1000);
-setInterval(throttledScrollToCurrent, 100);
-
 function scrollToCurrent() {
+    const scroll_to_current = localStorage.getItem('scroll_to_current');
+    if (scroll_to_current === 'false') {
+        return;
+    }
     const currentBlock = document.querySelector('.current');
     if (currentBlock) {
-        const bounding = currentBlock.getBoundingClientRect();
-        if (bounding.top < 0 || bounding.bottom > window.innerHeight) {
-            currentBlock.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
+        currentBlock.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 }
-
 // Call scrollToCurrent() every second
-// TODO: Remove if throttling function works
-// requestAnimationFrame(scrollToCurrent, 1000);
+setInterval(scrollToCurrent, 1000);
 
 // Call updateCurrentTimeRemaining() every second
-requestAnimationFrame(updateCurrentTimeRemaining, 1000);
+setInterval(updateCurrentTimeRemaining, 1000);
 
 function fetchAndUpdate() {
     fetchFile();
-    requestAnimationFrame(fetchAndUpdate, 2000);
+    setTimeout(fetchAndUpdate, 2000);
 }
 
 fetchAndUpdate(); // initial call
@@ -444,4 +407,4 @@ function checkDateAndRefresh() {
 }
 
 // Set an interval to check the date every minute (60000 milliseconds)
-requestAnimationFrame(checkDateAndRefresh, 60000);
+setInterval(checkDateAndRefresh, 60000);
