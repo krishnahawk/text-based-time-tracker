@@ -154,7 +154,9 @@ function parseAndDisplay(data) {
         if (isAfterEndTime) {
             timeblockDiv.classList.add('past');
         } else if (isAfterStartTime && isBeforeEndTimeMinusOneMinute) {
-            timeblockDiv.classList.add('current');
+            if (!element.classList.contains('current')) {
+                element.classList.add('current');
+            }
             // Add start time to the data-start-time attribute
             timeblockDiv.setAttribute('data-start-time', baseTime.getTime());
             // Add end time to the data-end-time attribute
