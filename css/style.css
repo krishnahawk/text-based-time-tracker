@@ -120,6 +120,16 @@ div#habits div.habit.done {
     scroll-behavior: smooth;
 }
 
+/* .timeblock {
+    TODO: Remove if following works
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    min-height: 2.5rem;
+    margin-bottom: 2rem;
+} */
 .timeblock {
     width: 100%;
     display: flex;
@@ -128,25 +138,22 @@ div#habits div.habit.done {
     justify-content: space-between;
     min-height: 2.5rem;
     margin-bottom: 2rem;
+    padding: 0.5rem;
+        /* Added common padding */
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        /* Added common font-family */
 }
 
 .timeblock .start_time {
     flex-basis: 20%;
     text-align: right;
-    padding: 0.5rem;
-    padding-right: 0.5rem;
     font-weight: 100;
     color: #909298;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .timeblock .description {
-    /* padding: 10px; */
-    border-radius: 5px;
-    /* margin: 5px 0; */
     color: #CCCFD7;
     flex-basis: 80%;
-    padding: 0.5rem;
     font-weight: 200;
 }
 
