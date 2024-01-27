@@ -1,6 +1,3 @@
-// TODO: When user mouses over bottom status bar, slide up status like time remaining, total time planned for the day, etc.
-// TODO: Add text editor that allows you to edit the file directly from the browser, either by clicking a mouseover nav item or by pressing "e" on the keyboard
-// Set time to 12:00am
 const now = new Date();
 now.setHours(0, 0, 0, 0);
 
@@ -48,13 +45,9 @@ function parseAndDisplay(data) {
     const startTime = new Date();
     startTime.setHours(0, 0, 0, 0); // Set to start of the day (midnight)
 
-    // TODO: If just a number is entered without m or h, it should assume it is minutes
-    // TODO: If a mix of h and m is entered (like 1h26m) it should calculate the total duration
-    // TODO: The very next time entry from the current one should tell you how long you have until the next time entry
-    // FIXME: There should only be one timeblock highlighted at a time, right now there are overlapping minutes when one is ending and the other is starting
     const [_, hour, minutesRaw, ampm] = lines[0].match(/(\d+)(?::(\d+))?(am|pm)/i);
     const minutes = minutesRaw || "0";
-    ;
+
     if (ampm.toLowerCase() === 'pm' && hour !== "12") {
         startTime.setHours(parseInt(hour) + 12);
 
