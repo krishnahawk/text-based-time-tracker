@@ -375,18 +375,55 @@ document.addEventListener('keydown', function (event) {
     }
 });
 
-function scrollToCurrent() {
-    const scroll_to_current = localStorage.getItem('scroll_to_current');
-    if (scroll_to_current === 'false') {
-        return;
-    }
-    const currentBlock = document.querySelector('.current');
-    if (currentBlock) {
-        currentBlock.scrollIntoView({ behavior: 'smooth', block: 'center' });
+// TODO: Remove this old version if new version works
+// function scrollToCurrent() {
+//     const scroll_to_current = localStorage.getItem('scroll_to_current');
+//     if (scroll_to_current === 'false') {
+//         return;
+//     }
+//     const currentBlock = document.querySelector('.current');
+//     if (currentBlock) {
+//         currentBlock.scrollIntoView({ behavior: 'smooth', block: 'center' });
+//     }
+// }
+
+function throttle(func, limit) {
+    let lastFunc;
+    let lastRan;
+    return function () {
+        const context = this;
+        const args = arguments;
+        if (!lastRan) {
+            func.apply(context, args);
+            lastRan = Date.now();
+        } else {
+            clearTimeout(lastFunc);
+            lastFunc = setTimeout(function () {
+                if ((Date.now() - lastRan) >= limit) {
+                    func.apply(context, args);
+                    lastRan = Date.now();
+                }
+            }, limit - (Date.now() - lastRan));
+        }
     }
 }
+
+const throttledScrollToCurrent = throttle(scrollToCurrent, 1000);
+setInterval(throttledScrollToCurrent, 100);
+
+function scrollToCurrent() {
+    const currentBlock = document.querySelector('.current');
+    if (currentBlock) {
+        const bounding = currentBlock.getBoundingClientRect();
+        if (bounding.top < 0 || bounding.bottom > window.innerHeight) {
+            currentBlock.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    }
+}
+
 // Call scrollToCurrent() every second
-requestAnimationFrame(scrollToCurrent, 1000);
+// TODO: Remove if throttling function works
+// requestAnimationFrame(scrollToCurrent, 1000);
 
 // Call updateCurrentTimeRemaining() every second
 requestAnimationFrame(updateCurrentTimeRemaining, 1000);
