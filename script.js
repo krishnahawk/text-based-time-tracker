@@ -100,6 +100,27 @@ function parseAndDisplay(data) {
             baseTime = newBaseTime;
             continue; // Skip to next iteration as this line is just a time
         }
+        // If the line starts with a - [ ] or - [*], create individual divs with add an html checkbox element to the last timeblock div with the words after the - [ ] or - [*] as the label. If the previous line was a timeblock, see if there is already a checklist div within the .description for that timeblock. If there is, add the new checklist item to that div. If there isn't, create a new checklist div and add the new checklist item to that div.
+        if (line.startsWith('- [ ]') || line.startsWith('- [*]')) {
+            const isDone = line.startsWith('- [*]');
+            const description = line.substring(5).trim();
+            const checklistItemDiv = document.createElement('div');
+            checklistItemDiv.className = 'checklist_item';
+            checklistItemDiv.innerHTML = `<input type="checkbox" ${isDone ? 'checked' : ''} /> ${description}`;
+            const timeblockDiv = timelineDiv.lastChild;
+            const descriptionDiv = timeblockDiv.querySelector('.description');
+            // If there is a .checklist div within the .description div, add the checklist item to that div, otherwise create a new .checklist div and add the checklist item to that div
+            const checklistDiv = descriptionDiv.querySelector('.checklist');
+            if (checklistDiv) {
+                checklistDiv.appendChild(checklistItemDiv);
+            } else {
+                const newChecklistDiv = document.createElement('div');
+                newChecklistDiv.className = 'checklist';
+                newChecklistDiv.appendChild(checklistItemDiv);
+                descriptionDiv.appendChild(newChecklistDiv);
+            }
+            continue;
+        }
         // If the line doesn't start with a number, create a memo div with text
         if (!lines[i].trim().match(/^\d/)) {
             const memoDiv = document.createElement('div');
@@ -108,7 +129,6 @@ function parseAndDisplay(data) {
             timelineDiv.appendChild(memoDiv);
             continue;
         }
-
 
         const [duration, rawDescription] = lines[i].split(' - ');
         let description = rawDescription;
